@@ -34,13 +34,16 @@ div > div {
   }
 /* divs within divs */
 
+button{
+    background-color: white;
+}
 
 .cellButton{
-    color:green;
+    color:white;
     width: 80px;
     height: 80px;
     /* margin: auto; */
-    border: 1px solid gray;
+    border: 1px solid white;
     /* border-radius: 6px; */
     font-size: 30px;
     text-align: center;
@@ -58,5 +61,6 @@ p{
 }
 
 .hovered{
-    background-color:green
+    /* background-color:seagreen; */
+    /* background-color:crimson; */
 }
