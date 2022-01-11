@@ -220,45 +220,14 @@ $("body").append(`<h4 id="p2Score">P2 Score: ${playerScoreY}`)
 // Try this but w a 2d array! Might be shorter !! 
 
 
-
-
-// 2d array ?? <== put this in a separate file... Too crowded here ..
 let board = [
-    [1, 1, 0],
-    [1, -1, -1],
-    [0, 0, 0],
+    [-1, 0, 0],
+    [0, -1, 0],
+    [0, 0, -1],
 ];
 
-// const outputColumns = function () {
-//     let columns1 = [];
-//     let columns2 = [];
-//     let columns3 = [];
-//     // let allColumns = columns1 + columns2 + columns3
-
-//     for (let j = 0; j < board.length; j++) {
-//         columns1.push(board[j][0]);
-//     }
-//     for (let j = 0; j < board.length; j++) {
-//         columns2.push(board[j][1]);
-//     }
-//     for (let j = 0; j < board.length; j++) {
-//         columns3.push(board[j][2]);
-//     }
-//     console.log(allColumns)
-// } 
-// outputColumns()
-
-const outputDiag = function (corner) { // corner can only be 1 or 2
-    let diags = [];
-    if (corner === 0) {
-        diags.push(board[0][0], board[1][1], board[2][2]);
-    };
-    if (corner === 2) {
-        diags.push(board[0][2], board[1][1], board[2][0]);
-    };
-    // console.log(diag)
-};
-
+let xWin = [1, 1, 1]
+let yWin = [-1, -1, -1]
 
 function arraysEqual(a, b) {
     for (let i = 0; i < a.length; ++i) {
@@ -266,33 +235,53 @@ function arraysEqual(a, b) {
     }
     return true;
 }
-// arraysEqual(board[0],board[2])
-
-
-let xWin = [1, 1, 1]
-let ywin = [-1, -1, -1]
-
 
 function checkForWin() {
+    let columns1 = [];
+    let columns2 = [];
+    let columns3 = [];
+    let diags1 = [];
+    let diags2 = [];
+
+    diags1.push(board[0][0], board[1][1], board[2][2]);
+    diags2.push(board[0][2], board[1][1], board[2][0]);
+
     for (let i = 0; i < board.length; i++) {
-        let columns1 = [];
-        let columns2 = [];
-        let columns3 = [];
-        // let allColumns = columns1 + columns2 + columns3
-            columns1.push(board[i][0]);
-            columns2.push(board[i][1]);
-            columns3.push(board[i][2]);
+        columns1.push(board[i][0]);
+        columns2.push(board[i][1]);
+        columns3.push(board[i][2]);
 
-
-        // if (arraysEqual(board[i],xWin)){
-        // console.log("x wins")
-        // }
-
-        if (arraysEqual(board[i][0], xWin)) {
-            console.log("x wins")
+        if (arraysEqual(board[i],xWin)){
+        console.log("x wins")
         }
-
-
+        if (arraysEqual(board[i],yWin)){
+            console.log("y wins")
+        }
+    }
+    if (arraysEqual(columns1, xWin)) {
+        console.log("x wins")
+    } else if (arraysEqual(columns1, yWin)) {
+        console.log("y wins")
+    } 
+    if (arraysEqual(columns2, xWin)) {
+        console.log("x wins")
+    } else if (arraysEqual(columns2, yWin)) {
+        console.log("y wins")
+    }
+    if (arraysEqual(columns3, xWin)) {
+        console.log("x wins")
+    } else if (arraysEqual(columns3, yWin)) {
+        console.log("y wins")
+    }
+    if (arraysEqual(diags1,xWin)){
+        console.log('x wins')
+    } else if (arraysEqual(diags1,yWin)){
+        console.log('y wins')
+    }
+    if (arraysEqual(diags2,xWin)){
+        console.log('x wins')
+    } else if (arraysEqual(diags2,yWin)){
+        console.log('y wins')
     }
 }
 checkForWin()
