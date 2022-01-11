@@ -3,7 +3,6 @@ $(window).on("load", function () {
     $("#p1Score").css("color", p1Color);
 })
 
-
 $(".colorButton").on("click", function () {
     if ($(this).parent().parent().attr("id") === "p1") {
         p1Color = ($(this).attr("id"))
@@ -38,28 +37,35 @@ $(".cellButton").hover(
 );
 
 // input username! 
-
 // $("#p1Avatar").on("change", function(){
-    $("body").append($("#p1Avatar").val())
-    
-    // console.log(document.getElementById("p1Avatar").files[0].name);
-    console.log($("#p1Avatar").val());
-$("#p1Avatar").on("change", function(){
+// $("body").append($("#p1Avatar").val())
+// console.log(document.getElementById("p1Avatar").files[0].name);
+console.log($("#p1Avatar").val());
+$("#p1Avatar").on("change", function () {
     console.log("img changed");
     $("#firstPlayerAvatar").attr("src", $("#p1Avatar").val());
     console.log($("#firstPlayerAvatar")); // img information
 });
 
-cellSelector = true;
-
-$("#firstMove").on("click", function(){
-    cellSelector = !cellSelector;
-    console.log(cellSelector)
-
-})
 
 
+
+
+//toggle colour selector (make it popup) 
 // allow preferences ie set first pos if first player 
+// let cellSelector = true;
+
+// $("#firstMove").on("click", function () {
+//     console.log(cellSelector);  
+//     cellSelector = !cellSelector;
+//     console.log(cellSelector);  
+// })
+
+
+
+
+
+
 
 // $("#p1Avatar").on("change", function(){
 //     const file = $("#p1Avatar").files
