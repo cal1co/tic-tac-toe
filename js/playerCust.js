@@ -36,10 +36,6 @@ $(".cellButton").hover(
     }
 );
 
-// input username! 
-// $("#p1Avatar").on("change", function(){
-// $("body").append($("#p1Avatar").val())
-// console.log(document.getElementById("p1Avatar").files[0].name);
 console.log($("#p1Avatar").val());
 $("#p1Avatar").on("change", function () {
     console.log("img changed");
