@@ -17,27 +17,60 @@
     <div class="board">
 
         <div class="cell" id="c1"><button id="b1" class="cellButton"></button></div>
-        <div class="cell" id="c2"><button id="b2"class="cellButton"></button></div>
-        <div class="cell" id="c3"><button id="b3"class="cellButton"></button></div>
-        <div class="cell" id="c4"><button id="b4"class="cellButton"></button></div>
-        <div class="cell" id="c5"><button id="b5"class="cellButton"></button></div>
-        <div class="cell" id="c6"><button id="b6"class="cellButton"></button></div>
-        <div class="cell" id="c7"><button id="b7"class="cellButton"></button></div>
-        <div class="cell" id="c8"><button id="b8"class="cellButton"></button></div>
-        <div class="cell" id="c9"><button id="b9"class="cellButton"></button></div>
+        <div class="cell" id="c2"><button id="b2" class="cellButton"></button></div>
+        <div class="cell" id="c3"><button id="b3" class="cellButton"></button></div>
+        <div class="cell" id="c4"><button id="b4" class="cellButton"></button></div>
+        <div class="cell" id="c5"><button id="b5" class="cellButton"></button></div>
+        <div class="cell" id="c6"><button id="b6" class="cellButton"></button></div>
+        <div class="cell" id="c7"><button id="b7" class="cellButton"></button></div>
+        <div class="cell" id="c8"><button id="b8" class="cellButton"></button></div>
+        <div class="cell" id="c9"><button id="b9" class="cellButton"></button></div>
 
-        <button id="resetBoard">reset board</button>
-        <button id="clearBoard">reset score</button>
+        <button class="functionButton" id="resetBoard">reset board</button>
+        <button class="functionButton" id="clearBoard">hard reset</button>
 
     </div>
 
-    <!-- <p id="p1Score">P1 Score:0</p> -->
-    <!-- <p id="p2Score">P2 Score:0</p> -->
 
+    <div class="customisation">
 
+        <div class="p1colorSelector" id="p1">
+
+            <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
+            <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
+            <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
+            <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
+            <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
+            <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
+            <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
+            <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
+            <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
+            <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+        </div>
+        
+        <div class="p2colorSelector" id=p2>
+            <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
+            <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
+            <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
+            <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
+            <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
+            <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
+            <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
+            <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
+            <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
+            <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+        </div>
+    </div>
+
+<button id="firstMove">first move preference</button>
+<!-- <img id="p1Img" width="50" height="50"> -->
+<input name="profileUpload" type="file" id="p1Avatar">
+<!-- <div id="firstPlayerAvatar"></div> -->
+<img id="firstPlayerAvatar" src="" alt="">
 
 
     <script src="js/jquery.js"></script>
+    <script src="js/playerCust.js"></script>
     <script src="js/main.js"></script>
 </body>
 
