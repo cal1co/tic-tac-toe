@@ -67,14 +67,14 @@ $("#pcPlay").on("click", function () {
     let p2blockCond2 = [1, 0, 1];
     let p2blockCond3 = [1, 1, 0];
 
-    if (xTurn){
+    if (xTurn) {
         $("#p1SelectedAvatar").css("border", `5px solid ${p1Color}`)
         $("#p2SelectedAvatar").css("border", `3px solid white`)
     } else if (!xTurn) {
         $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
         $("#p1SelectedAvatar").css("border", `3px solid white`)
     }
-    
+
     // blocking conditions come after ifwin conditions !!!! 
 
     // blocking enemy diagonals 
@@ -82,21 +82,18 @@ $("#pcPlay").on("click", function () {
         if (arraysEqual(diags1, p1blockCond1)) {
             board[0][0] = input
             checkForColor("c1")
-            blocked = true;
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags1, p1blockCond2)) {
             board[1][1] = input
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags1, p1blockCond3)) {
             board[2][2] = input
             checkForColor("c9")
-            blocked = true
         }
     }
 
@@ -104,194 +101,164 @@ $("#pcPlay").on("click", function () {
         if (arraysEqual(diags1, p2blockCond1)) {
             board[0][0] = input
             checkForColor("c1")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags1, p2blockCond2)) {
             board[1][1] = input
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags1, p2blockCond3)) {
             board[2][2] = input
             checkForColor("c9")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags2, p1blockCond1)) {
             board[0][2] = input
             checkForColor("c3")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags2, p1blockCond2)) {
             board[1][1] = input
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags2, p1blockCond3)) {
             board[2][0] = input
             checkForColor("c7")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags2, p2blockCond1)) {
             board[0][2] = input
             checkForColor("c3")
-            blocked = true
         }
     }
-
     if (!turnWent) {
         if (arraysEqual(diags2, p2blockCond2)) {
             board[1][1] = input
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(diags2, p2blockCond3)) {
             board[2][0] = input
             checkForColor("c7")
-            blocked = true
         }
     }
-
-
-
     // blocking enemy rows!
     if (!turnWent) {
         if (arraysEqual(rows1, p1blockCond1)) {
             board[0][0] = input
             checkForColor("c1")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows1, p1blockCond2)) {
             board[0][1] = input
             checkForColor("c2")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows1, p1blockCond3)) {
             board[0][2] = input
             checkForColor("c3")
-            blocked = true
+
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows2, p1blockCond1)) {
             board[1][0] = input
             checkForColor("c4")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows2, p1blockCond2)) {
             board[1][1] = input
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows2, p1blockCond3)) {
             board[1][2] = input
             checkForColor("c6")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows3, p1blockCond1)) {
             board[2][0] = input
             checkForColor("c7")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows3, p1blockCond2)) {
             board[2][1] = input
             checkForColor("c8")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows3, p1blockCond3)) {
             board[2][2] = input
             checkForColor("c9")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows1, p2blockCond1)) {
             board[0][0] = input
             checkForColor("c1")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows1, p2blockCond2)) {
             board[0][1] = input
             checkForColor("c2")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows1, p2blockCond3)) {
             board[0][2] = input
             checkForColor("c3")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows2, p2blockCond1)) {
             board[1][0] = input
             checkForColor("c4")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows2, p2blockCond2)) {
             board[1][1] = input
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows2, p2blockCond3)) {
             board[1][2] = input
             checkForColor("c6")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows3, p2blockCond1)) {
             board[2][0] = input
             checkForColor("c7")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows3, p2blockCond2)) {
             board[2][1] = input
             checkForColor("c8")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(rows3, p2blockCond3)) {
             board[2][2] = input
             checkForColor("c9")
-            blocked = true
         }
     }
     // blocking enemy columns!!
@@ -299,129 +266,110 @@ $("#pcPlay").on("click", function () {
         if (arraysEqual(columns1, p1blockCond1)) {
             board[0][0] = input;
             checkForColor("c1")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns1, p1blockCond2)) {
             board[1][0] = input;
             checkForColor("c4")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns1, p1blockCond3)) {
             board[2][0] = input;
             checkForColor("c7")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns2, p1blockCond1)) {
             board[0][1] = input;
             checkForColor("c2")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns2, p1blockCond2)) {
             board[1][1] = input;
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns2, p1blockCond3)) {
             board[2][1] = input;
             checkForColor("c8")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns3, p1blockCond1)) {
             board[0][2] = input;
             checkForColor("c3")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns3, p1blockCond2)) {
             board[1][2] = input;
             checkForColor("c6")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns3, p1blockCond3)) {
             board[2][2] = input;
             checkForColor("c9")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns1, p2blockCond1)) {
             board[0][0] = input;
             checkForColor("c1")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns1, p2blockCond2)) {
             board[1][0] = input;
             checkForColor("c4")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns1, p2blockCond3)) {
             board[2][0] = input;
             checkForColor("c7")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns2, p2blockCond1)) {
             board[0][1] = input;
             checkForColor("c2")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns2, p2blockCond2)) {
             board[1][1] = input;
             checkForColor("c5")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns2, p2blockCond3)) {
             board[2][1] = input;
             checkForColor("c8")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns3, p2blockCond1)) {
             board[0][2] = input;
             checkForColor("c3")
-            blocked = true;
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns3, p2blockCond2)) {
             board[1][2] = input;
             checkForColor("c6")
-            blocked = true
         }
     }
     if (!turnWent) {
         if (arraysEqual(columns3, p2blockCond3)) {
             board[2][2] = input;
             checkForColor("c9")
-            blocked = true
         }
     }
-
     if (!turnWent) {
         if (xTurn) {
             if (board[0][0] === input && board[2][2] === 0) {
@@ -429,41 +377,61 @@ $("#pcPlay").on("click", function () {
                 checkForColor("c9")
             }
         } else {
-            if (board[0][0] === input && board[2][2] === 0 ) {
+            if (board[0][0] === input && board[2][2] === 0) {
                 board[2][2] = input
                 checkForColor("c9")
             }
         }
     }
     if (!turnWent) {
-        if (!blocked) {
-            if (board[0][0] === 0) {
-                board[0][0] = input
-                checkForColor("c1")
-            }
-            else if (board[0][2] === 0) {
-                board[0][2] = input
-                checkForColor("c3")
-            }
+        // if (!blocked) {
+        if (board[0][0] === 0) {
+            board[0][0] = input
+            checkForColor("c1")
         }
+        else if (board[0][2] === 0) {
+            board[0][2] = input
+            checkForColor("c3")
+        }
+        // }
     }
-
-    if (!turnWent){
-        if (board[2][2] === 0){
+    if (!turnWent) {
+        if (board[2][2] === 0) {
             board[2][2] = input;
             checkForColor("c9")
         }
     }
-    if (!turnWent){
-        if (board[2][0] === 0){
+    if (!turnWent) {
+        if (board[2][0] === 0) {
             board[2][0] = input;
             checkForColor("c7")
         }
     }
-
-    console.log(board)
+    if (!turnWent) {
+        if (board[0][1] === 0) {
+            board[0][1] = input;
+            checkForColor("c2")
+        }
+    }
+    if (!turnWent) {
+        if (board[1][2] === 0) {
+            board[1][2] = input;
+            checkForColor("c6")
+        }
+    }
+    if (!turnWent) {
+        if (board[1][0] === 0) {
+            board[1][0] = input;
+            checkForColor("c4")
+        }
+    }
+    if (!turnWent) {
+        if (board[2][1] === 0) {
+            board[2][1] = input;
+            checkForColor("c8")
+        }
+    }
     xTurn = !xTurn
-
     if (!xTurn) {
         $(".cellButton").hover(
             function () {
@@ -492,15 +460,14 @@ $("#pcPlay").on("click", function () {
         );
     }
     checkForWin()
-}
-)
+}); // closing ai
 
 function checkForColor(cell) {
     if (xTurn) {
         $("#" + cell).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
         $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
         $("#p1SelectedAvatar").css("border", `3px solid white`)
-    
+
     }
     else {
         $("#" + cell).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
@@ -509,9 +476,6 @@ function checkForColor(cell) {
     }
     turnWent = true;
 }
-
-
-
 
 $(".cellButton").on('click', function () {
     gameInProgress = !gameInProgress;
@@ -582,9 +546,7 @@ $(".cellButton").on('click', function () {
     }
 
     checkForWin()
-})
-
-
+}) // closing cell click
 
 let xWin = [1, 1, 1]
 let yWin = [-1, -1, -1]

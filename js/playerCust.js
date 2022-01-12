@@ -83,19 +83,24 @@ $(".shyGuyImg").on("click", function () {
         $("#p2SelectedAvatar").attr("src", p2SelectedImg)
         $("#p2SelectedAvatar").show()
     }
-    console.log(p1SelectedImg)
     localStorage.setItem("p1SavedAvatar", p1SelectedImg)
     localStorage.setItem("p2SavedAvatar", p2SelectedImg)
 })
 
-
-
-
-console.log($("#p1Avatar").val());
+// let p1UploadedImg = localStorage.getItem("p1UploadedImg");
+// p1SelectedAvatar.src = localStorage.getItem("p1UploadedImg")
 $("#p1Avatar").on("change", function () {
-    console.log("img changed");
-    $("#firstPlayerAvatar").attr("src", $("#p1Avatar").val());
-    console.log($("#firstPlayerAvatar")); // img information
+    console.log(p1Avatar.files)
+    console.log($("#p1Avatar").val())
+
+    const [file] = p1Avatar.files
+    if (file) {
+        p1SelectedAvatar.src = URL.createObjectURL(file)
+    }
+
+console.log(p1SelectedAvatar.src)
+
+localStorage.setItem("p1UploadedImg", p1SelectedAvatar.src)
 });
 
 let p1Name = "";
@@ -115,5 +120,3 @@ $("#firstMove").on("click", function () {
         })
     }
 })
-
-

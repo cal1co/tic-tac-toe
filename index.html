@@ -87,6 +87,7 @@
             <button class="showShyGuyP2">select profile</button>
         
 <div class="profileImage" ><img src="" alt="" id="p1SelectedAvatar"></div>
+<img id="p1ImgUpload" src="#" alt="First player image">
 <div class="profileImage" ><img src="" alt=""id="p2SelectedAvatar"></div>
 
 
@@ -98,10 +99,10 @@
 
     </div>
     <div class="playerPreferences">
-        <!-- <button id="firstMove">first move preference</button> -->
+        <button id="firstMove">first move preference</button>
 
-        <input name="profileUpload" type="file" id="p1Avatar">
-
+        <input name="profileUpload" type="file" id="p1Avatar" class="hidden">
+        <label for="p1Avatar"></label>
     </div>
 
     <script src="js/jquery.js"></script>

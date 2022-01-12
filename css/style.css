@@ -51,6 +51,12 @@ h4{
     /* top:15%; */
 }
 
+input[type=file]{
+    color:transparent;
+    width:90px;
+}
+
+
 .functionButton{
     position:relative;
 }
