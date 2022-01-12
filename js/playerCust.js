@@ -37,8 +37,8 @@ let p2Color = localStorage.getItem("p2Color") || "crimson";
 let p1SavedAvatar = localStorage.getItem("p1SavedAvatar")
 let p2SavedAvatar = localStorage.getItem("p2SavedAvatar")
 
-$("#p1SelectedAvatar").attr("src", p1SavedAvatar)
-$("#p2SelectedAvatar").attr("src", p2SavedAvatar)
+$("#p1SelectedAvatar").attr("src", p1SavedAvatar).css("backgroundColor", p1Color)
+$("#p2SelectedAvatar").attr("src", p2SavedAvatar).css("backgroundColor", p2Color)
 
 
 $(".cellButton").hover(
