@@ -67,6 +67,14 @@ $("#pcPlay").on("click", function () {
     let p2blockCond2 = [1, 0, 1];
     let p2blockCond3 = [1, 1, 0];
 
+    if (xTurn){
+        $("#p1SelectedAvatar").css("border", `5px solid ${p1Color}`)
+        $("#p2SelectedAvatar").css("border", `3px solid white`)
+    } else if (!xTurn) {
+        $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
+        $("#p1SelectedAvatar").css("border", `3px solid white`)
+    }
+    
     // blocking conditions come after ifwin conditions !!!! 
 
     // blocking enemy diagonals 
@@ -91,10 +99,11 @@ $("#pcPlay").on("click", function () {
             blocked = true
         }
     }
+
     if (!turnWent) {
         if (arraysEqual(diags1, p2blockCond1)) {
-            board[0][2] = input
-            checkForColor("c3")
+            board[0][0] = input
+            checkForColor("c1")
             blocked = true
         }
     }
@@ -106,9 +115,16 @@ $("#pcPlay").on("click", function () {
         }
     }
     if (!turnWent) {
-        if (arraysEqual(diags2, p2blockCond3)) {
-            board[2][0] = input
-            checkForColor("c7")
+        if (arraysEqual(diags1, p2blockCond3)) {
+            board[2][2] = input
+            checkForColor("c9")
+            blocked = true
+        }
+    }
+    if (!turnWent) {
+        if (arraysEqual(diags2, p1blockCond1)) {
+            board[0][2] = input
+            checkForColor("c3")
             blocked = true
         }
     }
@@ -133,6 +149,7 @@ $("#pcPlay").on("click", function () {
             blocked = true
         }
     }
+
     if (!turnWent) {
         if (arraysEqual(diags2, p2blockCond2)) {
             board[1][1] = input
@@ -469,9 +486,14 @@ $("#pcPlay").on("click", function () {
 function checkForColor(cell) {
     if (xTurn) {
         $("#" + cell).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
+        $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
+        $("#p1SelectedAvatar").css("border", `3px solid white`)
+    
     }
     else {
         $("#" + cell).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
+        $("#p1SelectedAvatar").css("border", `5px solid ${p1Color}`)
+        $("#p2SelectedAvatar").css("border", `3px solid white`)
     }
     turnWent = true;
 }
@@ -479,10 +501,9 @@ function checkForColor(cell) {
 
 
 
-
-
 $(".cellButton").on('click', function () {
     gameInProgress = !gameInProgress;
+    checkForColor()
     let currentPick = $(this).parents(".cell").attr("id")
 
     if (!cellSelector) {
