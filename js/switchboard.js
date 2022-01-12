@@ -368,7 +368,7 @@ $("#pcPlay").on("click", function () {
     if (!turnWent) {
         if (arraysEqual(columns1, p2blockCond2)) {
             board[1][0] = input;
-            checkForColor("c5")
+            checkForColor("c4")
             blocked = true
         }
     }
@@ -448,6 +448,18 @@ $("#pcPlay").on("click", function () {
         }
     }
 
+    if (!turnWent){
+        if (board[2][2] === 0){
+            board[2][2] = input;
+            checkForColor("c9")
+        }
+    }
+    if (!turnWent){
+        if (board[2][0] === 0){
+            board[2][0] = input;
+            checkForColor("c7")
+        }
+    }
 
     console.log(board)
     xTurn = !xTurn
