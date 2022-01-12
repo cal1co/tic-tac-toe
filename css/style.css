@@ -55,6 +55,74 @@ h4{
     position:relative;
 }
 
+.shyGuyP1, .shyGuyP2{
+    /* border:1px solid white; */
+    display:grid;
+    grid-gap:none;
+    grid-template-columns: repeat(4,1fr);
+    position:fixed;
+    width:150px;
+    height:76px;
+    /* left:11.11%; */
+    top:60%;
+    /* background: white */
+}
+.shyGuyP1{
+    position:fixed;
+    left:11.11%;
+    display:none;
+}
+.showShyGuyP1{
+    margin:auto;
+    position:fixed;
+    left:11.11%;
+    top:55%;
+}
+
+#p1SelectedAvatar, #p2SelectedAvatar{
+    position:fixed;
+    top:30%;
+    height:60px;
+    width:60px;
+    border:3px solid white;
+    border-radius:20px;
+}
+#p1SelectedAvatar{
+    left:15%;
+    background:seagreen
+}
+#p2SelectedAvatar{
+    right:15%;
+    transform:scaleX(-1);
+    background:crimson;
+
+}
+
+
+.shyGuyP2{
+    right:11.11%;
+    transform:scaleX(-1);
+    display:none
+}
+.showShyGuyP2{
+    margin:auto;
+    position:fixed;
+    right:11.11%;
+    top:55%;
+}
+
+
+img{
+    height:35px;
+    width:35px;
+}
+.shyGuyImg:hover{
+/* add a clicking sound effect */
+    background-color:gold;
+    border:2px solid orange;
+    cursor:grab;
+    border-radius:10px;
+}
 
 .board {
     display: grid;
@@ -104,9 +172,10 @@ h4{
     grid-template-columns: repeat(5,1fr);
     width:154px;
     left:11.11%;
-    top:25%;
+    top:40%;
     margin:auto;
     position:fixed;
+    /* display:none; */
 }
 .p2colorSelector{
     display:grid;
@@ -114,9 +183,10 @@ h4{
     grid-template-columns: repeat(5,1fr);
     width:154px;
     right:11.11%;
-    top:25%;
+    top:40%;
     margin:auto;
     position:fixed;
+    /* display:none; */
 }
 .colorBoard{
     background-color: white;
@@ -124,6 +194,18 @@ h4{
     height:30px;
     width:30px;
     text-align: center;
+}
+
+.colorSelectButton{
+    margin:auto;
+    position:fixed;
+    top:48%;
+}
+#p1ColorButton{
+    left:11.11%;
+}
+#p2ColorButton{
+    right:11.11%;
 }
 
 .colorButton{
@@ -170,13 +252,13 @@ button{
 #p2Score{
     position:fixed;
     /* text-align: right; */
-    top:15%;
+    top:20%;
     right:11.11%;
 }
 
 #p1Score{
     position:fixed;
-    top:15%;
+    top:20%;
     left:11.11%;
 }
 

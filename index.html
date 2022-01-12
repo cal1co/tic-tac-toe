@@ -10,12 +10,8 @@
 </head>
 
 <body>
-
     <h1>Tic Tac Toe</h1>
-
-
     <div class="board">
-
         <div class="cell" id="c1"><button id="b1" class="cellButton"></button></div>
         <div class="cell" id="c2"><button id="b2" class="cellButton"></button></div>
         <div class="cell" id="c3"><button id="b3" class="cellButton"></button></div>
@@ -34,8 +30,12 @@
 
     <div class="customisation">
 
-        <div class="p1colorSelector" id="p1">
 
+
+
+        <button id=p1ColorButton class="colorSelectButton">hide colour select</button>
+
+        <div class="p1colorSelector" id="p1Color">
             <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
             <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
             <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
@@ -47,28 +47,62 @@
             <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
             <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
         </div>
+
+        <button id=p2ColorButton class="colorSelectButton">hide colour select</button>
+        <div class="p2colorSelector" id=p2Color>
+            <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
+            <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
+            <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
+            <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
+            <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
+            <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
+            <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
+            <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
+            <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
+            <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+        </div>
+
+        <div class="shyGuys">
+            <div class="shyGuyP1">
+                <img class="shyGuyImg" src="images/shy-guy/yellow-removebg-preview.png" >
+                <img class="shyGuyImg" src="images/shy-guy/white-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/red-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/purp-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/pink-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/green-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/blue-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/black-removebg-preview.png">
+            </div>
+        <button class="showShyGuyP1">select profile</button>
+            <div class="shyGuyP2">
+                <img class="shyGuyImg" src="images/shy-guy/yellow-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/white-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/red-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/purp-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/pink-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/green-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/blue-removebg-preview.png">
+                <img class="shyGuyImg" src="images/shy-guy/black-removebg-preview.png">
+            </div>
+            <button class="showShyGuyP2">select profile</button>
         
-        <div class="p2colorSelector" id=p2>
-            <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
-            <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
-            <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
-            <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
-            <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
-            <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
-            <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
-            <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
-            <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
-            <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+<div class="profileImage" ><img src="" alt="" id="p1SelectedAvatar"></div>
+<div class="profileImage" ><img src="" alt=""id="p2SelectedAvatar"></div>
+
+
+
+
+
+        <button class="backdrop">change background</button>
         </div>
+
     </div>
-<div class="playerPreferences">
-<button id="firstMove">first move preference</button>
+    <div class="playerPreferences">
+        <!-- <button id="firstMove">first move preference</button> -->
 
+        <input name="profileUpload" type="file" id="p1Avatar">
 
-<input name="profileUpload" type="file" id="p1Avatar">
-
-<img id="firstPlayerAvatar" src="" alt="">
-</div>
+    </div>
 
     <script src="js/jquery.js"></script>
     <script src="js/playerCust.js"></script>

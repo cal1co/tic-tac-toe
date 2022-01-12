@@ -1,27 +1,51 @@
-xTurn = true;
-keepGoing = true;
-cellSelector = true;
+let xTurn = true;
+let keepGoing = true;
+let cellSelector = true;
+let preferenceSet = false;
+let gameInProgress = false;
+let playerScoreX = localStorage.getItem("scoreX") || 0;
+let playerScoreY = localStorage.getItem("scoreY") || 0;
 let input = -1
-
 let board = [
     [0, 0, 0],
     [0, 0, 0],
     [0, 0, 0],
 ];
+if (localStorage.getItem("preferenceSet") === "true"){
+    input = 1
+    if (localStorage.getItem("P1FirstPick") === "c1"){ // I don't want to do this for every cell... there has to be a better way ... 
+            board[0][0] = input
+    }
+    $("#" + localStorage.getItem("P1FirstPick")).html('<p id="p1">X</p>')
+    xTurn = !xTurn;
+    $(".cellButton").hover(
+        function () {
+            $(this).addClass('hovered')
+            $(".hovered").html("O")
+            $(".hovered").css("background-color", `${p2Color}`)
+        },
+        function () {
+            $(".hovered").css("background-color", `white`)
+            $(".hovered").html("")
+            $(this).removeClass('hovered')
+        }
+    );
+    }
+    
+$("#p1").css("color",p1Color)
+$("#p2").css("color",p2Color)
+
+
 
 $(".cellButton").on('click', function () {
+    gameInProgress = !gameInProgress;
     let currentPick = $(this).parents(".cell").attr("id")
-    if (xTurn){
-        
-    } else {
-        
-    }
 
     if (!cellSelector) {
         return;
     }
     if (xTurn) {
-        $("#" + currentPick).html('<p id="p1">X</p>')
+        $("#" + currentPick).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
         $(".cellButton").hover(
             function () {
                 $(this).addClass('hovered')
@@ -35,7 +59,7 @@ $(".cellButton").on('click', function () {
             }
         );
     } else {
-        $("#" + currentPick).html('<p id="p2">O</p>')
+        $("#" + currentPick).html('<p id="p2">O</p>').css("background-color",`${p2Color}`)
         $(".cellButton").hover(
             function () {
                 $(this).addClass('hovered')
@@ -51,7 +75,6 @@ $(".cellButton").on('click', function () {
     }
     input = -input 
     xTurn = !xTurn;
-
     // is there an easier way? I was to change the board values on button click 
     if ($(this).attr("id") === "b1") {
         board[0][0] = input
@@ -91,4 +114,19 @@ function arraysEqual(a, b) {
         if (a[i] !== b[i]) return false;
     }
     return true;
+}
+
+let p1WinPrompt = function () {
+    $(".board").append("<h2>X WINS!</h2>");
+    playerScoreX++;
+    $("#p1Score").html(`P1 Score: ${playerScoreX}`);
+    keepGoing = false;
+    gameInProgress = false;
+}
+let p2WinPrompt = function(){
+    $(".board").append('<h2>O WINS!</h2>')
+    playerScoreY++
+    $("#p2Score").html(`P2 Score: ${playerScoreY}`)
+    keepGoing = false;
+    gameInProgress = false;
 }
