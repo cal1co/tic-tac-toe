@@ -31,6 +31,12 @@ if (localStorage.getItem("preferenceSet") === "true") {
         }
     );
 }
+if (localStorage.getItem("nesTheme") === "true"){
+    nesTheme();
+}
+
+
+
 $("#p1").css("color", p1Color)
 $("#p2").css("color", p2Color)
 

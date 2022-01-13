@@ -11,11 +11,11 @@ html,body{
 select{
     margin: none;
     position:fixed;
-    width:169px;
+    width:250px;
     padding: 5px 35px 5px 5px;
+    height: 34px;
     border: 2px solid white;
     border-radius:20px;
-    height: 34px;
     /* top:52%; */
     /* color:wheat; 
     /* color:black */
@@ -26,22 +26,18 @@ select{
 }
 #customisationDrop{
     /* left:11.11%; */
+    margin-left:-62.5px;
 }
 #customisationDrop2{
+    margin-left:-62.5px;
     /* right:11.11% */
 }
 
 
 h1{
-    /* text-align:center; */
-    /* line-height:55%; */
-    /* margin-left:-148.3px; */
-    /* position:absolute; */
-    /* left:50%; */
     color:orange;
     text-shadow:0 0 1px black;
     font-size:50px;
-    /* margin-top:50px */
 }
 
 /* *{
@@ -220,15 +216,13 @@ img{
     
 }
 
-
-
 .cellButton{
     background-color: white;
     color:white;
     width: 80px;
     height: 80px;
     /* margin: auto; */
-    /* border: 1px solid white; */
+    border: 2px solid black;
     font-size: 30px;
     text-align: center;
     /* border-radius:50px;  */
@@ -264,12 +258,14 @@ img{
     height:30px;
     width:30px;
     text-align: center;
+    border:none;
 }
 
 .colorSelectButton{
     margin:auto;
     position:fixed;
     top:48%;
+    border:none;
 }
 #p1ColorButton{
     /* left:11.11%; */

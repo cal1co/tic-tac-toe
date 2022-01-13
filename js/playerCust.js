@@ -120,13 +120,21 @@ let p2Name = "";
 
 
 $(".backdrop").on("click", function(){
+    nesTheme()
+})
 
+let nesTheme = function(){
+    nesTheme = true
     $("#nes1").attr("href", "./node_modules/nes.css/css/nes.min.css");
     $("#nes2").attr("href", "https://unpkg.com/nes.css/css/nes-core.min.css");
     $("#nes3").attr("href","https://fonts.googleapis.com/css?family=Press+Start+2P")
-})
-
-
+    $("h1").css("color","red");
+    $("h4").css("background", "white");
+    $("body").css("background", "black");
+    $(".cellButton").css({"border": "2px solid green"})
+    $("#p1SelectedAvatar, #p2SelectedAvatar").css({"border-radius": "0px"})
+    localStorage.setItem("nesTheme", nesTheme)
+}
 
 
 
