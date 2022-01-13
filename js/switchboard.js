@@ -11,6 +11,9 @@ let turnsWent = 0 // counts the amount of turns taken through the current game.
 let input = -1 // defines input on board. x is 1, y is -1
 let playerScoreX = localStorage.getItem("scoreX") || 0; // saves player score over refresh
 let playerScoreY = localStorage.getItem("scoreY") || 0; // "                     " 
+if (localStorage.getItem("nesTheme") === "true"){
+    nesTheme();
+}
 if (localStorage.getItem("preferenceSet") === "true") {
     input = 1
     if (localStorage.getItem("P1FirstPick") === "c1") { // I don't want to do this for every cell... there has to be a better way ... 
@@ -31,10 +34,6 @@ if (localStorage.getItem("preferenceSet") === "true") {
         }
     );
 }
-if (localStorage.getItem("nesTheme") === "true"){
-    nesTheme();
-}
-
 
 
 $("#p1").css("color", p1Color)
@@ -83,7 +82,7 @@ $("#pcPlay").on("click", function () { // a little long ...
         $("#p1SelectedAvatar").css("border", `3px solid white`)
     }
 
-    // blocking conditions come after ifwin conditions !!!! 
+    // blocking conditions should come after ifwin conditions !!!! 
 
     // blocking enemy diagonals 
     if (!turnWent) {

@@ -49,7 +49,7 @@ $(".cellButton").hover(
         $(".hovered").html("X")
     },
     function () {
-        $(".hovered").css("background-color", `white`)
+        $(".hovered").css("background-color", `transparent`)
         $(".hovered").html("")
         $(this).removeClass('hovered')
     }
@@ -125,15 +125,22 @@ $(".backdrop").on("click", function(){
 
 let nesTheme = function(){
     nesTheme = true
+    allowHoverColor = true;
     $("#nes1").attr("href", "./node_modules/nes.css/css/nes.min.css");
     $("#nes2").attr("href", "https://unpkg.com/nes.css/css/nes-core.min.css");
     $("#nes3").attr("href","https://fonts.googleapis.com/css?family=Press+Start+2P")
-    $("h1").css("color","red");
+    // $("h1").css("color","cornflourblue");
     $("h4").css("background", "white");
-    $("body").css("background", "black");
-    $(".cellButton").css({"border": "2px solid green"})
+    $("body").css("background", "lightblue");
+    // $("body").css({"background-image": "url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapercave.com%2Fretro-zelda-wallpaper&psig=AOvVaw3jwGR7TS1collMd75HAMWl&ust=1642155306659000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPCE37G_rvUCFQAAAAAdAAAAABAD)"})
+    // $(".cellButton").css({"border": "2px solid green"})
     $("#p1SelectedAvatar, #p2SelectedAvatar").css({"border-radius": "0px"})
+    // $(".cellButton").css("backgroundColor","black")
+    $(".cellButton").css("padding", "20px")
+    $(".cellButton").html("-")
     localStorage.setItem("nesTheme", nesTheme)
+    $("#clearBoard").hide();
+    $("#clearboard2").show();
 }
 
 

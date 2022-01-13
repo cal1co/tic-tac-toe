@@ -217,8 +217,8 @@ img{
 }
 
 .cellButton{
-    background-color: white;
-    color:white;
+    /* background-color: white; */
+    /* color:white; */
     width: 80px;
     height: 80px;
     /* margin: auto; */
@@ -228,6 +228,9 @@ img{
     /* border-radius:50px;  */
     /* THIS BORDER RADIUS DEFINES THE CLICKABLE SHAPE */
 
+}
+#clearboard2{
+    display:none;
 }
 
 .p1colorSelector{
@@ -408,6 +411,37 @@ button{
   .p2Preferences { grid-area: p2Preferences; }
   .utilArea1 { grid-area: utilArea1; }
   .utilArea2 { grid-area: utilArea2; }
+
+dialog{
+    width:25rem;
+    height:13rem;
+  
+}
+.dialogPrompt{
+    font-size:16px;
+    /* margin: 0px 0px 16px 0px; */
+    padding-bottom:20px;
+    height:0px;
+    /* width:0px; */
+    /* margin:none; */
+}
+.dialogText{
+    font-size:16px;
+    /* margin: 0px 0px 16px; */
+    /* margin:none; */
+    width:auto;
+    height:40px;
+    /* display:block; */
+    /* height: 0px; */
+    /* width:0px; */
+    text-align:left;
+}
+
+.dialog-menu{
+    display:block;
+    list-style-type:disc;
+
+}
 
 
 @media (max-width: 750px){

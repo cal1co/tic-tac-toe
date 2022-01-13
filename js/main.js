@@ -108,10 +108,16 @@ $("#resetBoard").on('click', function () { // clear board, saves relevant player
 });
 
 $("#clearBoard").on("click", function () {
+    // console.log('clicked')
+    localStorage.clear()
     localStorage.clear("scoreX")
-    localStorage.clear("scoreY")
-    window.location.reload()
+        localStorage.clear("scoreY")
+        window.location.reload()
 });
+$("#clearBoard2").on("click", function(){
+    console.log('hello')
+})
+
 
 $(".p1Score").append(`<h4 id="p1Score">P1 Score: ${playerScoreX}`)
 $(".p2Score").append(`<h4 id="p2Score">P2 Score: ${playerScoreY}`)
