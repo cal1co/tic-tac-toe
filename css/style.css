@@ -33,21 +33,12 @@ select{
     height: 34px;
     border: 2px solid white;
     border-radius:20px;
-    /* top:52%; */
-    /* color:wheat; 
-    /* color:black */
-    /* -mox-appearance:none; */
-    /* appearance:none; */
-    /* background-color:cornflowerblue; */
-    /* color:white; */
 }
 #customisationDrop{
-    /* left:11.11%; */
     margin-left:-62.5px;
 }
 #customisationDrop2{
     margin-left:-62.5px;
-    /* right:11.11% */
 }
 
 
@@ -57,26 +48,18 @@ h1{
     font-size:50px;
 }
 
-/* *{
-    color:white
-} */
+
 
 h2, h3{
     text-align:center;
     position:absolute;
-    /* width:100%; */
     margin:0 auto;
-    /* margin-left:-46.2px; */
     left:50%;
-    /* top:50%; */
     transform:translateY(-50%);
-    /* color:white */
-    /* margin-top:50%; */
 }
 h2{
     top:45%;
     margin-left:-46.2px;
-    /* font-weight:100px; */
 }
 h3{
     top:20%;
@@ -86,16 +69,10 @@ h3{
 h4{
     font-size:20px;
     font-weight:500px;
-    /* text-shadow:
-        0.07em 0 black,
-        0 0.07em black,
-        -0.07em 0 black,
-        0 -0.07em black; */
     background: rgba(255,255,255,0.5);
     padding:10px;
     letter-spacing:4px;
     border-radius:50px;
-    /* top:15%; */
 }
 
 input[type=file]{
@@ -103,28 +80,19 @@ input[type=file]{
     width:90px;
 }
 
-
 .functionButton{
     position:relative;
 }
 
 .shyGuyP1, .shyGuyP2{
-    /* border:1px solid white; */
     display:grid;
     grid-gap:none;
     grid-template-columns: repeat(4,1fr);
     position:fixed;
     width:150px;
     height:76px;
-    /* left:11.11%; */
-    /* top:60%; */
-
-    /*  */
-    /* background: white */
 }
 .shyGuyP1{
-    /* position:fixed; */
-    /* left:50%; */
     display:none;
     align-items: center;
 }
@@ -137,30 +105,22 @@ input[type=file]{
 
 #p1SelectedAvatar, #p2SelectedAvatar{
     position:fixed;
-    /* top:30%; */
     height:60px;
-    /* height:10%; */
     width:60px;
-    /* width:auto; */
-    /* width:10%; */
     border:3px solid white;
     border-radius:20px;
 }
 #p1SelectedAvatar{
     text-align:right;
-    /* left:15%; */
     background:seagreen
 }
 #p2SelectedAvatar{
-    /* right:15%; */
     transform:scaleX(-1);
     background:crimson;
 
 }
 
-
 .shyGuyP2{
-    /* right:11.11%; */
     transform:scaleX(-1);
     display:none
 }
@@ -177,7 +137,6 @@ img{
     width:35px;
 }
 .shyGuyImg:hover{ 
-/* add a clicking sound effect */
     background-color:gold;
     border:2px solid orange;
     cursor:grab;
@@ -203,10 +162,8 @@ img{
     grid-template-columns: repeat(3, 1fr);
     margin:auto;
     margin-left:-126.275px;
-    /* margin-top:-126.275px; */
     position:fixed;
     left:50%;
-    /* top:30%; */
     border:2px solid black
 
 
@@ -216,13 +173,9 @@ img{
     height: 80px;
     font-size: 25px;
     text-align: center;
-    /* border: 2px solid black; */
-    /* border-radius:50px; */
-    /* THIS BORDER RADIUS CAN BE CHANGED IF A PLAYER WANTS A CERTAIN SHAPE ?? */
     
 }
 .cell{
-    /* border: 2px solid black; */
     background:white
 }
 
@@ -234,16 +187,11 @@ img{
 }
 
 .cellButton{
-    /* background-color: white; */
-    /* color:white; */
     width: 80px;
     height: 80px;
-    /* margin: auto; */
     border: 2px solid black;
     font-size: 30px;
     text-align: center;
-    /* border-radius:50px;  */
-    /* THIS BORDER RADIUS DEFINES THE CLICKABLE SHAPE */
 
 }
 #clearboard2{
@@ -255,22 +203,16 @@ img{
     grid-gap:1px;
     grid-template-columns: repeat(5,1fr);
     width:154px;
-    /* left:11.11%; */
-    /* top:60%; */
     margin:auto;
     position:fixed;
-    /* display:none; */
 }
 .p2colorSelector{
     display:grid;
     grid-gap:1px;
     grid-template-columns: repeat(5,1fr);
     width:154px;
-    /* right:11.11%; */
-    /* top:60%; */
     margin:auto;
     position:fixed;
-    /* display:none; */
 }
 .colorBoard{
     background-color: white;
@@ -287,19 +229,12 @@ img{
     top:48%;
     border:none;
 }
-#p1ColorButton{
-    /* left:11.11%; */
-}
-#p2ColorButton{
-    /* right:11.11%; */
-}
 
 .colorButton{
     background-color: white;
     color:white;
     height:30px;
     width:30px;
-    /* border:1px solid black; */
 }
 
 #firstMove{
@@ -313,36 +248,11 @@ img{
 
 div > div { 
     padding: 0px;
-    /* background-color: #ccc; */
   }
-/* divs within divs */
 
-button{
-}
-
-
-#player1{
-    /* color:seagreen; */
-    /* margin:; */
-}
-#player2{
-    /* margin:0; */
-    /* color:crimson; */
-    /* position:fixed; */
-}
-
-
-#p2Score{
-
-    /* top:20%; */
-    /* right:11.11%; */
-    /* text-align:right; */
-}
 
 #p1Score{
     position:right;
-    /* top:20%; */
-    /* left:11.11%; */
 }
 
 #crimson{
@@ -365,7 +275,6 @@ button{
 }
 #skyblue{
     background-color:skyblue;
-    /* color:cornflowerblue; */
 }
 #purple{
     background-color:purple;
@@ -388,9 +297,6 @@ button{
 .p1Preferences, .p2Preferences{
     margin-left:-169px;
     margin-top:7px;
-}
-.utilArea1{
-    /* left:50%; */
 }
 .utilityOption{
     margin-top:250px;
@@ -436,21 +342,13 @@ dialog{
 }
 .dialogPrompt{
     font-size:16px;
-    /* margin: 0px 0px 16px 0px; */
     padding-bottom:20px;
     height:0px;
-    /* width:0px; */
-    /* margin:none; */
 }
 .dialogText{
     font-size:16px;
-    /* margin: 0px 0px 16px; */
-    /* margin:none; */
     width:auto;
     height:40px;
-    /* display:block; */
-    /* height: 0px; */
-    /* width:0px; */
     text-align:left;
 }
 

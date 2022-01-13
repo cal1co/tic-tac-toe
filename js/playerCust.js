@@ -166,6 +166,9 @@ $(".cattheme").on("click", function(){
     // playGarf()
 })
 
+// $(".bunnyTheme").on("click", function(){
+
+// })
 
 // $("#firstMove").on("click", function () {
 //     if (!gameInProgress) { // visually show that you're out of the selector. this also only 
