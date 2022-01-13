@@ -123,6 +123,9 @@ $(".backdrop").on("click", function(){
     nesTheme()
 })
 
+
+// $(".garf").hide()
+
 let nesTheme = function(){
     nesTheme = true
     allowHoverColor = true;
@@ -132,8 +135,6 @@ let nesTheme = function(){
     // $("h1").css("color","cornflourblue");
     $("h4").css("background", "white");
     $("body").css("background", "lightblue");
-    // $("body").css({"background-image": "url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapercave.com%2Fretro-zelda-wallpaper&psig=AOvVaw3jwGR7TS1collMd75HAMWl&ust=1642155306659000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPCE37G_rvUCFQAAAAAdAAAAABAD)"})
-    // $(".cellButton").css({"border": "2px solid green"})
     $("#p1SelectedAvatar, #p2SelectedAvatar").css({"border-radius": "0px"})
     // $(".cellButton").css("backgroundColor","black")
     $(".cellButton").css("padding", "20px")
@@ -141,9 +142,43 @@ let nesTheme = function(){
     localStorage.setItem("nesTheme", nesTheme)
     $("#clearBoard").hide();
     $("#clearboard2").show();
+
+    $("#garfenable").attr("src", "js/garf-returns.js")
+    $("#garf").show()
+
 }
 
+$(".cattheme").on("click", function(){
+    $("#garfenable").attr("src", "js/garf-returns.js")
 
+
+    const textSoup = function(){
+        const getRandomValue = function(num){
+            return Math.floor(Math.random() * num)
+          }
+          
+        const $wordDiv = $('<div class="word">')
+        $wordDiv.text("meow")
+        const xPos = getRandomValue(window.innerWidth)
+        const yPos = getRandomValue(window.innerHeight)
+        $wordDiv.css({
+            fontSize:40,
+          top: yPos,
+          left: xPos,
+          color: `rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`,
+          transform: `rotate(${getRandomValue(360)}deg)`
+        })
+  
+        $('.whole').append($wordDiv)
+  
+        $wordDiv.fadeIn(2000).fadeOut(2000, function(){
+          $(this).remove()
+        })
+      } 
+      textSoup()
+    // $("#garf").css('visibility', 'visible')
+    // playGarf()
+})
 
 
 

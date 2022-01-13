@@ -7,6 +7,23 @@ html,body{
 /* *{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 } */
+#word{
+    white-space:nowrap
+}
+
+
+.garf{
+    /* color:blue; */
+    position:absolute;
+    width:200px;
+    fill:orange;
+    visibility:hidden;
+}
+
+.garf:hover{
+    fill:orange;
+    cursor:grab;
+}
 
 select{
     margin: none;
