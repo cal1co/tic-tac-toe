@@ -109,9 +109,9 @@ $("#clearBoard").on("click", function () {
         window.location.reload()
 });
 
-$("#clearBoard2").on("click", function(){
-    console.log('hello')
-})
+// $("#clearBoard2").on("click", function(){
+//     console.log('hello')
+// })
 
 
 $(".p1Score").append(`<h4 id="p1Score">P1 Score: ${playerScoreX}`)

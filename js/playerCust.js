@@ -164,10 +164,14 @@ $(".cattheme").on("click", function(){
       textSoup()
     // $("#garf").css('visibility', 'visible')
     // playGarf()
-    $("body").css("backgroundColor", `rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
-    $("h1").css("color",`rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`),
-    $(".cellButton").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
-    $(".board").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
+    let background = $("body").css("backgroundColor", `rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`);
+    let newH1 = $("h1").css("color",`rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`);
+    let newCell = $(".cellButton").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`);
+    let newBoard = $(".board").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
+    localStorage.setItem("setBackground", background)
+    localStorage.setItem("newH1", newH1)
+    localStorage.setItem("newCell", newCell)
+    localStorage.setItem("newBoard", newBoard)
 })
 
 // $(".bunnyTheme").on("click", function(){

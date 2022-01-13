@@ -35,6 +35,48 @@ if (localStorage.getItem("preferenceSet") === "true") {
     );
 }
 
+// savedBackground = localStorage.getItem("setBackground")
+// console.log(savedBackground)
+// $("body").css("backgroundColor", savedBackground)
+// savedH1 = localStorage.getItem("newH1")
+// $("h1").css("backgroundColor", newH1)
+// localStorage.setItem("newCell", newCell)
+// localStorage.setItem("newBoard", newBoard)
+
+let whatHoverColor = function(currentPick){
+    if (xTurn) {
+        $("#" + currentPick).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
+        $(".cellButton").hover(
+            function () {
+                $(this).addClass('hovered')
+                $(".hovered").html("O")
+                $(".hovered").css("background-color", `${p2Color}`)
+            },
+            function () {
+                $(".hovered").css("background-color", `white`)
+                $(".hovered").html("")
+                $(this).removeClass('hovered')
+            }
+        );
+    } else {
+        $("#" + currentPick).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
+        $(".cellButton").hover(
+            function () {
+                $(this).addClass('hovered')
+                $(".hovered").css("background-color", `${p1Color}`)
+                $(".hovered").html("X")
+            },
+            function () {
+                $(".hovered").css("background-color", `white`)
+                $(".hovered").html("")
+                $(this).removeClass('hovered')
+            }
+        );
+    }
+}
+
+
+
 $("#p1").css("color", p1Color)
 $("#p2").css("color", p2Color)
 
@@ -486,39 +528,39 @@ $(".cellButton").on('click', function () {
     checkForColor()
     turnsWent++
     let currentPick = $(this).parents(".cell").attr("id")
-
     if (!cellSelector) {
         return;
     }
-    if (xTurn) {
-        $("#" + currentPick).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
-        $(".cellButton").hover(
-            function () {
-                $(this).addClass('hovered')
-                $(".hovered").html("O")
-                $(".hovered").css("background-color", `${p2Color}`)
-            },
-            function () {
-                $(".hovered").css("background-color", `white`)
-                $(".hovered").html("")
-                $(this).removeClass('hovered')
-            }
-        );
-    } else {
-        $("#" + currentPick).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
-        $(".cellButton").hover(
-            function () {
-                $(this).addClass('hovered')
-                $(".hovered").css("background-color", `${p1Color}`)
-                $(".hovered").html("X")
-            },
-            function () {
-                $(".hovered").css("background-color", `white`)
-                $(".hovered").html("")
-                $(this).removeClass('hovered')
-            }
-        );
-    }
+    whatHoverColor(currentPick);
+    // if (xTurn) {
+    //     $("#" + currentPick).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
+    //     $(".cellButton").hover(
+    //         function () {
+    //             $(this).addClass('hovered')
+    //             $(".hovered").html("O")
+    //             $(".hovered").css("background-color", `${p2Color}`)
+    //         },
+    //         function () {
+    //             $(".hovered").css("background-color", `white`)
+    //             $(".hovered").html("")
+    //             $(this).removeClass('hovered')
+    //         }
+    //     );
+    // } else {
+    //     $("#" + currentPick).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
+    //     $(".cellButton").hover(
+    //         function () {
+    //             $(this).addClass('hovered')
+    //             $(".hovered").css("background-color", `${p1Color}`)
+    //             $(".hovered").html("X")
+    //         },
+    //         function () {
+    //             $(".hovered").css("background-color", `white`)
+    //             $(".hovered").html("")
+    //             $(this).removeClass('hovered')
+    //         }
+    //     );
+    // }
     input = -input
     xTurn = !xTurn;
     // is there an easier way? I was to change the board values on button click 
