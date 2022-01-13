@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link id="nes1" rel="stylesheet" href="" >
+    <link id="nes2" href="" rel="stylesheet" >
+    <link id="nes3" href="" rel="stylesheet" >
     <title>Tic-Tac-Toe</title>
 </head>
 
 
 <body>
-
-
-
-
 
     <div class="container">
         <div class="title">
@@ -31,10 +30,12 @@
                 <div class="cell" id="c7"><button id="b7" class="cellButton"></button></div>
                 <div class="cell" id="c8"><button id="b8" class="cellButton"></button></div>
                 <div class="cell" id="c9"><button id="b9" class="cellButton"></button></div>
-
-                <button class="functionButton" id="resetBoard">reset board</button>
-                <button class="functionButton" id="clearBoard">hard reset</button>
-                <button id="pcPlay">PC move</button>
+            </div>
+            <div class="utilityOption">
+                <button class="functionButton nes-btn is-success" id="resetBoard">reset board</button>
+                <button class="functionButton nes-btn is-error" id="clearBoard">hard reset</button>
+                <button class="nes-btn is-primary" id="pcPlay">PC move</button>
+                <button class="backdrop nes-btn is-warning">change background</button>
             </div>
         </div>
         <div class="p1Score"></div>
@@ -46,7 +47,7 @@
             <div class="profileImage"><img src="" alt="" id="p2SelectedAvatar"></div>
         </div>
         <div class="p1Preferences">
-            <select name="customisation1" id="customisationDrop">
+            <select name="customisation1" id="customisationDrop" class="nes-select.is-success">
                 <option value="defaultState" selected>player preferences:</option>
                 <option value="colorButton">colour selector</option>
                 <option value="avatarSelect">select avatar</option>
@@ -119,7 +120,7 @@
 
 
 
-        <button class="backdrop">change background</button>
+    
 
     <input name="profileUpload" type="file" id="p1Avatar" class="hidden">
     <label for="p1Avatar"></label>

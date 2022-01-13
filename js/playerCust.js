@@ -119,7 +119,12 @@ let p1Name = "";
 let p2Name = "";
 
 
+$(".backdrop").on("click", function(){
 
+    $("#nes1").attr("href", "./node_modules/nes.css/css/nes.min.css");
+    $("#nes2").attr("href", "https://unpkg.com/nes.css/css/nes-core.min.css");
+    $("#nes3").attr("href","https://fonts.googleapis.com/css?family=Press+Start+2P")
+})
 
 
 
