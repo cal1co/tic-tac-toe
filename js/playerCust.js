@@ -127,7 +127,7 @@ let nesTheme = function(){
     $(".cellButton").html("-")
     localStorage.setItem("nesTheme", nesTheme)
     $("#clearBoard").hide();
-    $("#clearboard2").show();
+    // $("#clearboard2").show();
 
     $("#garfenable").attr("src", "js/garf-returns.js")
     $("#garf").show()
@@ -138,10 +138,10 @@ $(".cattheme").on("click", function(){
     $("#garfenable").attr("src", "js/garf-returns.js")
 
 
+    const getRandomValue = function(num){
+        return Math.floor(Math.random() * num)
+      }
     const textSoup = function(){
-        const getRandomValue = function(num){
-            return Math.floor(Math.random() * num)
-          }
           
         const $wordDiv = $('<div class="word">')
         $wordDiv.text("meow")
@@ -164,6 +164,10 @@ $(".cattheme").on("click", function(){
       textSoup()
     // $("#garf").css('visibility', 'visible')
     // playGarf()
+    $("body").css("backgroundColor", `rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
+    $("h1").css("color",`rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`),
+    $(".cellButton").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
+    $(".board").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
 })
 
 // $(".bunnyTheme").on("click", function(){
