@@ -1,18 +1,14 @@
-let xTurn = true;
-let cpuGo = false;
-let keepGoing = true;
-let turnWent = false;
-let cellSelector = true;
-let preferenceSet = false;
-let gameInProgress = false;
-let playerScoreX = localStorage.getItem("scoreX") || 0;
-let playerScoreY = localStorage.getItem("scoreY") || 0;
-let input = -1
-let board = [
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-];
+let xTurn = true; // defines what turn 
+let cpuGo = false; //defines if the cpu has gone. This is needed because it affects the css
+let keepGoing = true; // defines if there are more moves to go
+let turnWent = false; //defines if a turn has been taken. This prevents multiple moves by pc
+let cellSelector = true; // 
+let preferenceSet = false; // 
+let gameInProgress = false; // defines if the game is going (if a player has won)
+let turnsWent = 0 // counts the amount of turns taken through the current game.
+let input = -1 // defines input on board. x is 1, y is -1
+let playerScoreX = localStorage.getItem("scoreX") || 0; // saves player score over refresh
+let playerScoreY = localStorage.getItem("scoreY") || 0; // "                     " 
 if (localStorage.getItem("preferenceSet") === "true") {
     input = 1
     if (localStorage.getItem("P1FirstPick") === "c1") { // I don't want to do this for every cell... there has to be a better way ... 
@@ -33,15 +29,18 @@ if (localStorage.getItem("preferenceSet") === "true") {
         }
     );
 }
-
 $("#p1").css("color", p1Color)
 $("#p2").css("color", p2Color)
 
+let board = [ // 2d array of board 
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+];
 
-
-$("#pcPlay").on("click", function () {
+$("#pcPlay").on("click", function () { // a little long ... 
     turnWent = false
-    let blocked = false
+    turnsWent++
     input = -input
     // turn to function ===>
     let rows1 = board[0];
@@ -54,7 +53,6 @@ $("#pcPlay").on("click", function () {
     let diags2 = [];
     diags1.push(board[0][0], board[1][1], board[2][2]);
     diags2.push(board[0][2], board[1][1], board[2][0]);
-    // console.log(diags2)
     for (let i = 0; i < board.length; i++) {
         columns1.push(board[i][0]);
         columns2.push(board[i][1]);
@@ -462,7 +460,7 @@ $("#pcPlay").on("click", function () {
     checkForWin()
 }); // closing ai
 
-function checkForColor(cell) {
+function checkForColor(cell) { // defines what to give to a cell depending on current cell. 
     if (xTurn) {
         $("#" + cell).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
         $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
@@ -480,6 +478,7 @@ function checkForColor(cell) {
 $(".cellButton").on('click', function () {
     gameInProgress = !gameInProgress;
     checkForColor()
+    turnsWent++
     let currentPick = $(this).parents(".cell").attr("id")
 
     if (!cellSelector) {
@@ -548,27 +547,3 @@ $(".cellButton").on('click', function () {
     checkForWin()
 }) // closing cell click
 
-let xWin = [1, 1, 1]
-let yWin = [-1, -1, -1]
-
-function arraysEqual(a, b) {
-    for (let i = 0; i < a.length; ++i) {
-        if (a[i] !== b[i]) return false;
-    }
-    return true;
-}
-
-let p1WinPrompt = function () {
-    $(".board").append("<h2>X WINS!</h2>");
-    playerScoreX++;
-    $("#p1Score").html(`P1 Score: ${playerScoreX}`);
-    keepGoing = false;
-    gameInProgress = false;
-}
-let p2WinPrompt = function () {
-    $(".board").append('<h2>O WINS!</h2>')
-    playerScoreY++
-    $("#p2Score").html(`P2 Score: ${playerScoreY}`)
-    keepGoing = false;
-    gameInProgress = false;
-}

@@ -3,29 +3,29 @@ $(window).on("load", function () {
     $("#p1Score").css("color", p1Color);
 })
 
+$("#p1Color").hide()
+$("#p2Color").hide()
 
-$(".colorSelectButton").on("click", function(){
-    if ($(this).attr("id") === "p1ColorButton"){
-    $("#p1Color").toggle("display")
+$(".colorSelectButton").on("click", function () {
+    if ($(this).attr("id") === "p1ColorButton") {
+        $("#p1Color").toggle("display")
     } else {
-    $("#p2Color").toggle("display")
+        $("#p2Color").toggle("display")
     }
-
-
 })
 
 $(".colorButton").on("click", function () {
     if ($(this).parent().parent().attr("id") === "p1Color") {
         p1Color = ($(this).attr("id"))
-        // console.log(p1Color)
         $("#p1Score").css("color", p1Color);
         $("#p1SelectedAvatar").css("backgroundColor", p1Color)
+        $('select[name="customisation1"]').css("backgroundColor", p1Color)
     } else {
         p2Color = ($(this).attr("id"))
         $("#p2Score").css("color", p2Color);
         $("#p2SelectedAvatar").css("backgroundColor", p2Color)
+        $('select[name="customisation2"]').css("backgroundColor", p2Color)
     }
-    // console.log(p1Color)
     localStorage.setItem("p1Color", p1Color)
     localStorage.setItem("p2Color", p2Color)
 })
@@ -33,12 +33,13 @@ $(".colorButton").on("click", function () {
 let p1Color = localStorage.getItem("p1Color") || "seagreen";
 let p2Color = localStorage.getItem("p2Color") || "crimson";
 
-
 let p1SavedAvatar = localStorage.getItem("p1SavedAvatar")
 let p2SavedAvatar = localStorage.getItem("p2SavedAvatar")
-
 $("#p1SelectedAvatar").attr("src", p1SavedAvatar).css("backgroundColor", p1Color)
 $("#p2SelectedAvatar").attr("src", p2SavedAvatar).css("backgroundColor", p2Color)
+
+$('select[name="customisation1"]').css("backgroundColor", p1Color)
+$('select[name="customisation2"]').css("backgroundColor", p2Color)
 
 
 $(".cellButton").hover(
@@ -54,19 +55,46 @@ $(".cellButton").hover(
     }
 );
 
-$(".showShyGuyP1").on("click", function () {
-    $(".shyGuyP1").toggle("display")
 
+
+$('select[name="customisation1"]').change(function () {
+    // hides all open so no overlapping 
+    $(".shyGuyP1").hide()
+    $("#p1Color").hide()
+    if ($(this).val() == "colorButton") {
+        $("#p1Color").show()
+    }
+    if ($(this).val() == "avatarSelect"){
+        $(".shyGuyP1").show()
+    }
 })
-$(".showShyGuyP2").on("click", function () {
-    $(".shyGuyP2").toggle("display")
-
+$('select[name="customisation2"]').change(function () {
+    // hides all open so no overlapping 
+    $(".shyGuyP2").hide()
+    $("#p2Color").hide()
+    if ($(this).val() == "colorButton") {
+        $("#p2Color").show()
+    }
+    if ($(this).val() == "avatarSelect"){
+        $(".shyGuyP2").show()
+    }
 })
 
-if ($("#p1SelectedAvatar").attr("src") === ""){
+
+
+// $(".showShyGuyP1").on("click", function () {
+//     $(".shyGuyP1").toggle("display")
+
+// })
+// $(".showShyGuyP2").on("click", function () {
+//     $(".shyGuyP2").toggle("display")
+
+// })
+
+if ($("#p1SelectedAvatar").attr("src") === "") {
     $("#p1SelectedAvatar").hide()
 }
-if ($("#p2SelectedAvatar").attr("src") === ""){
+if ($("#p2SelectedAvatar").attr("src") === "") {
     $("#p2SelectedAvatar").hide()
 }
 
@@ -77,46 +105,60 @@ $(".shyGuyImg").on("click", function () {
         p1SelectedImg = ($(this).attr("src"))
         $("#p1SelectedAvatar").attr("src", p1SelectedImg)
         $("#p1SelectedAvatar").show()
-    } else{
+        localStorage.setItem("p1SavedAvatar", p1SelectedImg)
+    } else {
         p2SelectedImg = ($(this).attr("src"))
 
         $("#p2SelectedAvatar").attr("src", p2SelectedImg)
         $("#p2SelectedAvatar").show()
+        localStorage.setItem("p2SavedAvatar", p2SelectedImg)
     }
-    localStorage.setItem("p1SavedAvatar", p1SelectedImg)
-    localStorage.setItem("p2SavedAvatar", p2SelectedImg)
 })
-
-// let p1UploadedImg = localStorage.getItem("p1UploadedImg");
-// p1SelectedAvatar.src = localStorage.getItem("p1UploadedImg")
-$("#p1Avatar").on("change", function () {
-    console.log(p1Avatar.files)
-    console.log($("#p1Avatar").val())
-
-    const [file] = p1Avatar.files
-    if (file) {
-        p1SelectedAvatar.src = URL.createObjectURL(file)
-    }
-
-console.log(p1SelectedAvatar.src)
-
-localStorage.setItem("p1UploadedImg", p1SelectedAvatar.src)
-});
 
 let p1Name = "";
 let p2Name = "";
 
-$("#firstMove").on("click", function () {
-    if (!gameInProgress) { // visually show that you're out of the selector. this also only 
-        cellSelector = !cellSelector;
-        gameInProgress = !gameInProgress
-        // console.log('not in progress')
-        $(".cellButton").on("click", function () {
-            let currentPick = $(this).parents(".cell").attr("id")
-            // console.log(currentPick)
-            localStorage.setItem("P1FirstPick", currentPick)
-            localStorage.setItem("preferenceSet", true)
-            // preferenceSet = true;
-        })
-    }
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $("#firstMove").on("click", function () {
+//     if (!gameInProgress) { // visually show that you're out of the selector. this also only 
+//         cellSelector = !cellSelector;
+//         gameInProgress = !gameInProgress
+//         $(".cellButton").on("click", function () {
+//             let currentPick = $(this).parents(".cell").attr("id")
+//             localStorage.setItem("P1FirstPick", currentPick)
+//             localStorage.setItem("preferenceSet", true)
+//             // preferenceSet = true;
+//         })
+//     }
+// })
+
+
+
+// let p1UploadedImg = localStorage.getItem("p1UploadedImg");
+// p1SelectedAvatar.src = localStorage.getItem("p1UploadedImg")
+// $("#p1Avatar").on("change", function () { // file upload... WIP 
+//     const [file] = p1Avatar.files
+//     if (file) {
+//         p1SelectedAvatar.src = URL.createObjectURL(file)
+//     }
+
+// // console.log(p1SelectedAvatar.src)
+
+// localStorage.setItem("p1UploadedImg", p1SelectedAvatar.src)
+// });
+

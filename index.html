@@ -9,62 +9,75 @@
     <title>Tic-Tac-Toe</title>
 </head>
 
+
 <body>
-    <h1>Tic Tac Toe</h1>
-    <div class="board">
-        <div class="cell" id="c1"><button id="b1" class="cellButton"></button></div>
-        <div class="cell" id="c2"><button id="b2" class="cellButton"></button></div>
-        <div class="cell" id="c3"><button id="b3" class="cellButton"></button></div>
-        <div class="cell" id="c4"><button id="b4" class="cellButton"></button></div>
-        <div class="cell" id="c5"><button id="b5" class="cellButton"></button></div>
-        <div class="cell" id="c6"><button id="b6" class="cellButton"></button></div>
-        <div class="cell" id="c7"><button id="b7" class="cellButton"></button></div>
-        <div class="cell" id="c8"><button id="b8" class="cellButton"></button></div>
-        <div class="cell" id="c9"><button id="b9" class="cellButton"></button></div>
-
-        <button class="functionButton" id="resetBoard">reset board</button>
-        <button class="functionButton" id="clearBoard">hard reset</button>
-
-    </div>
-<button id="pcPlay">PLAY FOR ME</button>
-
-    <div class="customisation">
 
 
 
 
-        <button id=p1ColorButton class="colorSelectButton">hide colour select</button>
 
-        <div class="p1colorSelector" id="p1Color">
-            <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
-            <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
-            <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
-            <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
-            <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
-            <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
-            <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
-            <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
-            <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
-            <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+    <div class="container">
+        <div class="title">
+            <h1>Tic Tac Toe</h1>
         </div>
+        <div class="whole">
+            <div class="board">
+                <div class="cell" id="c1"><button id="b1" class="cellButton"></button></div>
+                <div class="cell" id="c2"><button id="b2" class="cellButton"></button></div>
+                <div class="cell" id="c3"><button id="b3" class="cellButton"></button></div>
+                <div class="cell" id="c4"><button id="b4" class="cellButton"></button></div>
+                <div class="cell" id="c5"><button id="b5" class="cellButton"></button></div>
+                <div class="cell" id="c6"><button id="b6" class="cellButton"></button></div>
+                <div class="cell" id="c7"><button id="b7" class="cellButton"></button></div>
+                <div class="cell" id="c8"><button id="b8" class="cellButton"></button></div>
+                <div class="cell" id="c9"><button id="b9" class="cellButton"></button></div>
 
-        <button id=p2ColorButton class="colorSelectButton">hide colour select</button>
-        <div class="p2colorSelector" id=p2Color>
-            <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
-            <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
-            <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
-            <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
-            <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
-            <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
-            <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
-            <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
-            <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
-            <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+                <button class="functionButton" id="resetBoard">reset board</button>
+                <button class="functionButton" id="clearBoard">hard reset</button>
+                <button id="pcPlay">PC move</button>
+            </div>
         </div>
+        <div class="p1Score"></div>
+        <!-- THIS IS FROM JQUERY, FIGURE OUT THIS -->
+        <div class="p2Score"></div>
+        <div class="p1Avatar"><img src="" alt="" id="p1SelectedAvatar"></div>
+        <div class="profileImage"></div>
+        <div class="p2Avatar">
+            <div class="profileImage"><img src="" alt="" id="p2SelectedAvatar"></div>
+        </div>
+        <div class="p1Preferences">
+            <select name="customisation1" id="customisationDrop">
+                <option value="defaultState" selected>player preferences:</option>
+                <option value="colorButton">colour selector</option>
+                <option value="avatarSelect">select avatar</option>
+            </select>
 
-        <div class="shyGuys">
+
+        </div>
+        <div class="p2Preferences">
+            <select name="customisation2" id="customisationDrop2">
+                <option value="defaultState" selected>player preferences:</option>
+                <option value="colorButton">colour selector</option>
+                <option value="avatarSelect">select avatar</option>
+            </select>
+
+        </div>
+        <div class="utilArea1">
+
+            <div class="p1colorSelector" id="p1Color">
+                <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
+                <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
+                <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
+                <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
+                <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
+                <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
+                <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
+                <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
+                <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
+                <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+            </div>
             <div class="shyGuyP1">
-                <img class="shyGuyImg" src="images/shy-guy/yellow-removebg-preview.png" >
+                <img class="shyGuyImg" src="images/shy-guy/yellow-removebg-preview.png">
                 <img class="shyGuyImg" src="images/shy-guy/white-removebg-preview.png">
                 <img class="shyGuyImg" src="images/shy-guy/red-removebg-preview.png">
                 <img class="shyGuyImg" src="images/shy-guy/purp-removebg-preview.png">
@@ -73,7 +86,21 @@
                 <img class="shyGuyImg" src="images/shy-guy/blue-removebg-preview.png">
                 <img class="shyGuyImg" src="images/shy-guy/black-removebg-preview.png">
             </div>
-        <button class="showShyGuyP1">select profile</button>
+
+        </div>
+        <div class="utilArea2">
+            <div class="p2colorSelector" id=p2Color>
+                <div class="colorBoard" id="col1"><button id="crimson" class="colorButton"></button></div>
+                <div class="colorBoard" id="col2"><button id="orange" class="colorButton"></button></div>
+                <div class="colorBoard" id="col3"><button id="gold" class="colorButton"></button></div>
+                <div class="colorBoard" id="col4"><button id="yellow" class="colorButton"></button></div>
+                <div class="colorBoard" id="col5"><button id="greenyellow" class="colorButton"></button></div>
+                <div class="colorBoard" id="col6"><button id="seagreen" class="colorButton"></button></div>
+                <div class="colorBoard" id="col7"><button id="skyblue" class="colorButton"></button></div>
+                <div class="colorBoard" id="col8"><button id="purple" class="colorButton"></button></div>
+                <div class="colorBoard" id="col9"><button id="indigo" class="colorButton"></button></div>
+                <div class="colorBoard" id="col10"><button id="violet" class="colorButton"></button></div>
+            </div>
             <div class="shyGuyP2">
                 <img class="shyGuyImg" src="images/shy-guy/yellow-removebg-preview.png">
                 <img class="shyGuyImg" src="images/shy-guy/white-removebg-preview.png">
@@ -84,25 +111,18 @@
                 <img class="shyGuyImg" src="images/shy-guy/blue-removebg-preview.png">
                 <img class="shyGuyImg" src="images/shy-guy/black-removebg-preview.png">
             </div>
-            <button class="showShyGuyP2">select profile</button>
-        
-<div class="profileImage" ><img src="" alt="" id="p1SelectedAvatar"></div>
-<img id="p1ImgUpload" src="#" alt="First player image">
-<div class="profileImage" ><img src="" alt=""id="p2SelectedAvatar"></div>
 
-
+        </div>
+        <div class="blank">
+        </div>
+    </div>
 
 
 
         <button class="backdrop">change background</button>
-        </div>
 
-    </div>
-    <div class="playerPreferences">
-        <button id="firstMove">first move preference</button>
-
-        <input name="profileUpload" type="file" id="p1Avatar" class="hidden">
-        <label for="p1Avatar"></label>
+    <input name="profileUpload" type="file" id="p1Avatar" class="hidden">
+    <label for="p1Avatar"></label>
     </div>
 
     <script src="js/jquery.js"></script>
