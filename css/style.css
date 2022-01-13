@@ -1,8 +1,10 @@
 html,body{
     background:cornflowerblue;
+    /* background-image:url("/Users/calicoalex/sei/projects/tic-tac-toe/pokemon-wallpapers/1.png"); */
     margin:0;
     height:100%;
 }
+
 
 /* *{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -132,7 +134,7 @@ input[type=file]{
 }
 
 
-img{
+.shyGuyImg{
     height:35px;
     width:35px;
 }

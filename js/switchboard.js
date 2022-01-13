@@ -75,6 +75,20 @@ let whatHoverColor = function(currentPick){
     }
 }
 
+function checkForColor(cell) { // defines what to give to a cell depending on current cell. 
+    if (xTurn) {
+        $("#" + cell).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
+        $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
+        $("#p1SelectedAvatar").css("border", `3px solid white`)
+
+    }
+    else {
+        $("#" + cell).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
+        $("#p1SelectedAvatar").css("border", `5px solid ${p1Color}`)
+        $("#p2SelectedAvatar").css("border", `3px solid white`)
+    }
+    turnWent = true;
+}
 
 
 $("#p1").css("color", p1Color)
@@ -508,20 +522,6 @@ $("#pcPlay").on("click", function () { // a little long ...
     checkForWin()
 }); // closing ai
 
-function checkForColor(cell) { // defines what to give to a cell depending on current cell. 
-    if (xTurn) {
-        $("#" + cell).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
-        $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
-        $("#p1SelectedAvatar").css("border", `3px solid white`)
-
-    }
-    else {
-        $("#" + cell).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
-        $("#p1SelectedAvatar").css("border", `5px solid ${p1Color}`)
-        $("#p2SelectedAvatar").css("border", `3px solid white`)
-    }
-    turnWent = true;
-}
 
 $(".cellButton").on('click', function () {
     gameInProgress = !gameInProgress;
