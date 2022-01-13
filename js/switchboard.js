@@ -1,6 +1,6 @@
-// import "nes.css/css/nes.min.css"; // do I need? 
+// import "nes.css/css/nes.min.css"; 
 
-let xTurn = true; // defines what turn 
+let xTurn = localStorage.getItem("playerTurn") || true; // defines what turn 
 let cpuGo = false; //defines if the cpu has gone. This is needed because it affects the css
 let keepGoing = true; // defines if there are more moves to go
 let turnWent = false; //defines if a turn has been taken. This prevents multiple moves by pc
@@ -35,11 +35,8 @@ if (localStorage.getItem("preferenceSet") === "true") {
     );
 }
 
-
 $("#p1").css("color", p1Color)
 $("#p2").css("color", p2Color)
-
-// $("*").css({"font-family": "none"})
 
 let board = [ // 2d array of board 
     [0, 0, 0],

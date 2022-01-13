@@ -56,7 +56,6 @@ $(".cellButton").hover(
 );
 
 
-
 $('select[name="customisation1"]').change(function () {
     // hides all open so no overlapping 
     $(".shyGuyP1").hide()
@@ -81,16 +80,6 @@ $('select[name="customisation2"]').change(function () {
 })
 
 
-
-// $(".showShyGuyP1").on("click", function () {
-//     $(".shyGuyP1").toggle("display")
-
-// })
-// $(".showShyGuyP2").on("click", function () {
-//     $(".shyGuyP2").toggle("display")
-
-// })
-
 if ($("#p1SelectedAvatar").attr("src") === "") {
     $("#p1SelectedAvatar").hide()
 }
@@ -100,7 +89,6 @@ if ($("#p2SelectedAvatar").attr("src") === "") {
 
 $(".shyGuyImg").on("click", function () {
 
-    // let $img = $(this).clone();s
     if ($(this).parent().attr("class") === "shyGuyP1") {
         p1SelectedImg = ($(this).attr("src"))
         $("#p1SelectedAvatar").attr("src", p1SelectedImg)
@@ -123,8 +111,6 @@ $(".backdrop").on("click", function(){
     nesTheme()
 })
 
-
-// $(".garf").hide()
 
 let nesTheme = function(){
     nesTheme = true
@@ -179,14 +165,6 @@ $(".cattheme").on("click", function(){
     // $("#garf").css('visibility', 'visible')
     // playGarf()
 })
-
-
-
-
-
-
-
-
 
 
 // $("#firstMove").on("click", function () {

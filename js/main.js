@@ -14,6 +14,8 @@ let p1WinPrompt = function () { // win prompts
     $("#p1Score").html(`P1 Score: ${playerScoreX}`);
     keepGoing = false;
     gameInProgress = false;
+    xTurn = false;
+    localStorage.setItem("playerTurn", xTurn)
 }
 let p2WinPrompt = function () {
     $(".board").append('<h2>O WINS!</h2>')
@@ -21,6 +23,8 @@ let p2WinPrompt = function () {
     $("#p2Score").html(`P2 Score: ${playerScoreY}`)
     keepGoing = false;
     gameInProgress = false;
+    xTurn = true;
+    localStorage.setItem("playerTurn", xTurn)
 }
 
 function checkForWin() { // compares arrays with win cond
@@ -89,13 +93,6 @@ function checkForWin() { // compares arrays with win cond
         });
     }
 
-
-    // !!!!!! CHECK FOR TIE !!!!!!!
-
-
-
-
-
 }
 checkForWin()
 
@@ -108,12 +105,10 @@ $("#resetBoard").on('click', function () { // clear board, saves relevant player
 });
 
 $("#clearBoard").on("click", function () {
-    // console.log('clicked')
     localStorage.clear()
-    localStorage.clear("scoreX")
-        localStorage.clear("scoreY")
         window.location.reload()
 });
+
 $("#clearBoard2").on("click", function(){
     console.log('hello')
 })
