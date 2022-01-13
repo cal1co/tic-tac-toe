@@ -1,14 +1,14 @@
-#Simple Tic-Tac-Toe (WIP)
+# Simple Tic-Tac-Toe (WIP)
 
 ## MY SITE: https://cal1co.github.io/tic-tac-toe/
 
 
-##About this project:
+## About this project:
 Completed as a project 0 for General Assembly class SEI-50
 
 This project is a simple take on the classic "Tic-Tac-Toe" or "Naughts and Crosses" game everyone knows. Although many features were not implemented, and many bugs and design issues persisting, the final product is presentable and functional. 
 
-##Notable features:
+## Notable features:
 - The game functions as expected - making a connection of 3 x's or o's leads to a win. 
 - Player colours and avatars are selectable.
 - A score counter logs a players' score (throughout page refresh)
@@ -17,7 +17,7 @@ This project is a simple take on the classic "Tic-Tac-Toe" or "Naughts and Cross
 - Meow
 
 
-##Known bugs and unintended features:
+## Known bugs and unintended features:
 - When all moves are played by the PC, a tie condition is not shown
 - Some browsers display the avatar preview incorecctly (compared to Firefox)
 - Meow button creates content below screen, forcing a downwards scroll.
@@ -26,7 +26,7 @@ This project is a simple take on the classic "Tic-Tac-Toe" or "Naughts and Cross
 - Could not use jQuery (or most DOM functions) on the nes/gameboy theme. 
 - After a last recent change, x's and o's aren't switching first move .__. 
 
-##Wishlist and housekeeping: 
+## Wishlist and housekeeping: 
 Many alternate themes have been prepared but not implemented. In order to display the nes/gameboy theme, many steps had to be taken, and issues with jQuery arose (see "Known bugs"). 4 more themes exist which sadly have not been utilised. 
 
 Could not implement DVD garf or cat-walk. The svg file for garf had a display bug which will be fixed in the future. 
@@ -53,5 +53,5 @@ Very disappointed that I couldn't get the profile images working. Uploading them
 
 Keys 1-9 should select cells 1-9. Arrow keys should allow a user to highlight a cell.
 
-##Summary:
+## Summary:
 Overall, I suffered from having too many goals and not enough time to implement them without breaking something else. My output was adequate but lacks in presentation and functionality. A large portion of my time went into theme creation, the point system, player customisation and work into other features that didn't make it into the game. If that time went into the features that did make, the game would be more cohesive and enjoyable. I learnt a lot during this project, and will be able to use a lot of that in my future work.
