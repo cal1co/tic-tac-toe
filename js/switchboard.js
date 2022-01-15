@@ -1,5 +1,4 @@
 // import "nes.css/css/nes.min.css"; 
-
 let xTurn = localStorage.getItem("playerTurn") || true; // defines what turn 
 let cpuGo = false; //defines if the cpu has gone. This is needed because it affects the css
 let keepGoing = true; // defines if there are more moves to go
@@ -14,6 +13,10 @@ let playerScoreY = localStorage.getItem("scoreY") || 0; // "                    
 if (localStorage.getItem("nesTheme") === "true"){
     nesTheme();
 }
+let cellColor = "white"
+if (nesTheme === true){
+    cellColor = "#209cee"
+}  
 if (localStorage.getItem("preferenceSet") === "true") {
     input = 1
     if (localStorage.getItem("P1FirstPick") === "c1") { // I don't want to do this for every cell... there has to be a better way ... 
@@ -34,14 +37,8 @@ if (localStorage.getItem("preferenceSet") === "true") {
         }
     );
 }
-
-// savedBackground = localStorage.getItem("setBackground")
-// console.log(savedBackground)
-// $("body").css("backgroundColor", savedBackground)
-// savedH1 = localStorage.getItem("newH1")
-// $("h1").css("backgroundColor", newH1)
-// localStorage.setItem("newCell", newCell)
-// localStorage.setItem("newBoard", newBoard)
+$("#p1").css("color", p1Color)
+$("#p2").css("color", p2Color)
 
 let whatHoverColor = function(currentPick){
     if (xTurn) {
@@ -89,10 +86,6 @@ function checkForColor(cell) { // defines what to give to a cell depending on cu
     }
     turnWent = true;
 }
-
-
-$("#p1").css("color", p1Color)
-$("#p2").css("color", p2Color)
 
 let board = [ // 2d array of board 
     [0, 0, 0],
@@ -532,35 +525,6 @@ $(".cellButton").on('click', function () {
         return;
     }
     whatHoverColor(currentPick);
-    // if (xTurn) {
-    //     $("#" + currentPick).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
-    //     $(".cellButton").hover(
-    //         function () {
-    //             $(this).addClass('hovered')
-    //             $(".hovered").html("O")
-    //             $(".hovered").css("background-color", `${p2Color}`)
-    //         },
-    //         function () {
-    //             $(".hovered").css("background-color", `white`)
-    //             $(".hovered").html("")
-    //             $(this).removeClass('hovered')
-    //         }
-    //     );
-    // } else {
-    //     $("#" + currentPick).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
-    //     $(".cellButton").hover(
-    //         function () {
-    //             $(this).addClass('hovered')
-    //             $(".hovered").css("background-color", `${p1Color}`)
-    //             $(".hovered").html("X")
-    //         },
-    //         function () {
-    //             $(".hovered").css("background-color", `white`)
-    //             $(".hovered").html("")
-    //             $(this).removeClass('hovered')
-    //         }
-    //     );
-    // }
     input = -input
     xTurn = !xTurn;
     // is there an easier way? I was to change the board values on button click 

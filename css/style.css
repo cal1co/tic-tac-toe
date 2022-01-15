@@ -181,12 +181,6 @@ input[type=file]{
     background:white
 }
 
-.customisation{
-    /* display:grid;
-    grid-gap:none;
-    grid-template-columns: repeat(5,1fr); */
-    
-}
 
 .cellButton{
     width: 80px;

@@ -41,19 +41,21 @@ $("#p2SelectedAvatar").attr("src", p2SavedAvatar).css("backgroundColor", p2Color
 $('select[name="customisation1"]').css("backgroundColor", p1Color)
 $('select[name="customisation2"]').css("backgroundColor", p2Color)
 
+function cellHover(){
+    $(".cellButton").hover(
+        function () {
+            $(this).addClass('hovered')
+            $(".hovered").css("background-color", `${p1Color}`)
+            $(".hovered").html("X")
+        },
+        function () {
+            $(".hovered").css("background-color", `${cellColor}`)
+            $(".hovered").html("-")
+            $(this).removeClass('hovered')
+        }
+    );
+} cellHover()
 
-$(".cellButton").hover(
-    function () {
-        $(this).addClass('hovered')
-        $(".hovered").css("background-color", `${p1Color}`)
-        $(".hovered").html("X")
-    },
-    function () {
-        $(".hovered").css("background-color", `transparent`)
-        $(".hovered").html("")
-        $(this).removeClass('hovered')
-    }
-);
 
 
 $('select[name="customisation1"]').change(function () {
@@ -108,30 +110,32 @@ let p2Name = "";
 
 
 $(".backdrop").on("click", function(){
-    nesTheme()
+    nesTheme();
+    window.location.reload();
 })
 
 
 let nesTheme = function(){
-    nesTheme = true
+    nesTheme = true;
     allowHoverColor = true;
     $("#nes1").attr("href", "./node_modules/nes.css/css/nes.min.css");
     $("#nes2").attr("href", "https://unpkg.com/nes.css/css/nes-core.min.css");
-    $("#nes3").attr("href","https://fonts.googleapis.com/css?family=Press+Start+2P")
+    $("#nes3").attr("href","https://fonts.googleapis.com/css?family=Press+Start+2P");
+    // $("*").css("fontFamily", "'Spline Sans', sans-serif");
     // $("h1").css("color","cornflourblue");
     $("h4").css("background", "white");
     $("body").css("background", "lightblue");
     $("#p1SelectedAvatar, #p2SelectedAvatar").css({"border-radius": "0px"})
-    // $(".cellButton").css("backgroundColor","black")
-    $(".cellButton").css("padding", "20px")
-    $(".cellButton").html("-")
-    localStorage.setItem("nesTheme", nesTheme)
+    // $(".cellButton").css("backgroundColor","black");
+    $(".cellButton").css("padding", "20px");
+    $(".cellButton").html("-");
+    localStorage.setItem("nesTheme", nesTheme);
     $("#clearBoard").hide();
     // $("#clearboard2").show();
 
-    $("#garfenable").attr("src", "js/garf-returns.js")
-    $("#garf").show()
-
+    $("#garfenable").attr("src", "js/garf-returns.js");
+    $("#garf").show();
+    cellHover()
 }
 
 $(".cattheme").on("click", function(){
@@ -142,7 +146,6 @@ $(".cattheme").on("click", function(){
         return Math.floor(Math.random() * num)
       }
     const textSoup = function(){
-          
         const $wordDiv = $('<div class="word">')
         $wordDiv.text("meow")
         const xPos = getRandomValue(window.innerWidth)
@@ -164,10 +167,11 @@ $(".cattheme").on("click", function(){
       textSoup()
     // $("#garf").css('visibility', 'visible')
     // playGarf()
-    let background = $("body").css("backgroundColor", `rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`);
+    commonColor = `rgb(${getRandomValue(255)},${getRandomValue(255)},${getRandomValue(255)})`
+    let background = $("body").css("backgroundColor", commonColor);
     let newH1 = $("h1").css("color",`rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`);
-    let newCell = $(".cellButton").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`);
-    let newBoard = $(".board").css("border", `2px solid rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`)
+    let newCell = $(".cellButton").css("border", `2px solid ${commonColor}`);
+    let newBoard = $(".board").css("border", `2px solid rgb(${commonColor})`)
     localStorage.setItem("setBackground", background)
     localStorage.setItem("newH1", newH1)
     localStorage.setItem("newCell", newCell)
