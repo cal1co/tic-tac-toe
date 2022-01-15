@@ -18,13 +18,13 @@ This project is a simple take on the classic "Tic-Tac-Toe" of "Naughts and Cross
 
 
 ## Known bugs and unintended features:
-- When all moves are played by the PC, a tie condition is not shown
-- Some browsers display the avatar preview incorecctly (compared to Firefox)
+- When all moves are played by the PC, a tie condition is not shown. There are 2 other game patterns that don't result in a tie.
+- Some browsers display the avatar preview incorecctly (compared to Firefox).
 - Meow button creates content below screen, forcing a downwards scroll.
-- After font change, text is not displayed in center of board
-- Hovering over a cell merely changes the colour to white when mouseleave. This creates an issue with the alternate themes that don't have a white button as the original state. 
+- After font change, text is not displayed in center of board. 
+- Hovering over a cell merely changes the colour to white when mouseleave. This creates an issue with the alternate theme that don't have a white button as the original state. <--[!FIXED 1/15/22!]-->
 - Could not use jQuery (or most DOM functions) on the nes/gameboy theme. 
-- After a recent change, x's and o's aren't switching first move .__. 
+- After a recent change, x's and o's aren't switching first move after a game is played .__. 
 
 ## Wishlist and housekeeping: 
 - Many alternate themes have been prepared but not implemented. In order to display the nes/gameboy theme, many steps had to be taken, and issues with jQuery arose (see "Known bugs"). 4 more themes exist which sadly have not been utilised. 

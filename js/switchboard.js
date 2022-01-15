@@ -37,12 +37,25 @@ if (localStorage.getItem("preferenceSet") === "true") {
         }
     );
 }
-$("#p1").css("color", p1Color)
-$("#p2").css("color", p2Color)
 
-let whatHoverColor = function(currentPick){
+function setCellColor(){
+    $("#p1").css("background", p1Color);
+    $("#p2").css("background", p2Color);
+} setCellColor();
+
+
+// $(".chosenCellp1").css("background", p1Color)
+// $(".chosenCellp2").css("background", p2Color)
+
+
+let whatHoverColor = function(currentPick, currentButton){
+    console.log(currentPick)
+    console.log(currentButton)
+    // let currentButton = currentButton;
     if (xTurn) {
-        $("#" + currentPick).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
+        $("#" + currentPick).html('<button id="p1" class="chosenCell nes-btn is-primary">X</button>')
+        $("#p1").css("background", p1Color)
+        setCellColor();
         $(".cellButton").hover(
             function () {
                 $(this).addClass('hovered')
@@ -56,7 +69,9 @@ let whatHoverColor = function(currentPick){
             }
         );
     } else {
-        $("#" + currentPick).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
+        $("#" + currentPick).html('<button id="p2" class="chosenCell nes-btn is-primary">O</button>').css("backgroundColor", `${p2Color}`)
+        $("#p2").css("background", p2Color)
+        setCellColor();
         $(".cellButton").hover(
             function () {
                 $(this).addClass('hovered')
@@ -71,16 +86,22 @@ let whatHoverColor = function(currentPick){
         );
     }
 }
+$("#p1").css('background', p1Color)
+$("#p2").css('background', p2Color)
 
 function checkForColor(cell) { // defines what to give to a cell depending on current cell. 
     if (xTurn) {
-        $("#" + cell).html('<p id="p1">X</p>').css("background-color", `${p1Color}`)
+        $("#" + cell).html('<button id="p1" class="chosenCell nes-btn is-primary">X</button>').css("backgroundColor", `${p1Color}`)
+        $("#p1").css("background", p1Color);
+        setCellColor();
         $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
         $("#p1SelectedAvatar").css("border", `3px solid white`)
 
     }
     else {
-        $("#" + cell).html('<p id="p2">O</p>').css("background-color", `${p2Color}`)
+        $("#" + cell).html('<button id="p2" class="chosenCell nes-btn is-primary">O</button>').css("backgroundColor", `${p2Color}`)
+        $("#p2").css("background", p2Color);
+        setCellColor();
         $("#p1SelectedAvatar").css("border", `5px solid ${p1Color}`)
         $("#p2SelectedAvatar").css("border", `3px solid white`)
     }
@@ -520,11 +541,13 @@ $(".cellButton").on('click', function () {
     gameInProgress = !gameInProgress;
     checkForColor()
     turnsWent++
+    setCellColor();
     let currentPick = $(this).parents(".cell").attr("id")
+    // console.log(this)
     if (!cellSelector) {
         return;
     }
-    whatHoverColor(currentPick);
+    whatHoverColor(currentPick, this);
     input = -input
     xTurn = !xTurn;
     // is there an easier way? I was to change the board values on button click 

@@ -106,7 +106,7 @@ $("#resetBoard").on('click', function () { // clear board, saves relevant player
 
 $("#clearBoard").on("click", function () {
     localStorage.clear()
-        window.location.reload()
+    window.location.reload()
 });
 
 // $("#clearBoard2").on("click", function(){

@@ -13,7 +13,6 @@ html,body{
     white-space:nowrap
 }
 
-
 .garf{
     /* color:blue; */
     position:absolute;
@@ -178,7 +177,14 @@ input[type=file]{
     
 }
 .cell{
-    background:white
+    background:white;
+    width:80px;
+    height:80px;
+}
+.chosenCell{
+    width:80px;
+    height:80px;
+
 }
 
 
