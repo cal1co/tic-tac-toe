@@ -6,7 +6,7 @@
 ## About this project:
 Completed as project 0 for General Assembly class SEI-50
 
-This project is a simple take on the classic "Tic-Tac-Toe" of "Naughts and Crosses" game everyone knows. Although many features were not implemented, and many bugs and design issues persist, the final product is presentable and functional. 
+This project is a simple take on the classic "Tic-Tac-Toe" or "Naughts and Crosses" game everyone knows. Although many features were not implemented, and many bugs and design issues persist, the final product is presentable and functional. 
 
 ## Notable features:
 - The game functions as expected - making a connection of 3 x's or o's leads to a win. 

@@ -17,6 +17,8 @@ let cellColor = "white"
 if (nesTheme === true){
     cellColor = "#209cee"
 }  
+console.trace(setCellColor())
+
 if (localStorage.getItem("preferenceSet") === "true") {
     input = 1
     if (localStorage.getItem("P1FirstPick") === "c1") { // I don't want to do this for every cell... there has to be a better way ... 
