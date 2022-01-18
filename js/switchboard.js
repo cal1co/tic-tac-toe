@@ -18,32 +18,34 @@ if (nesTheme === true){
     cellColor = "#209cee"
 }  
 console.trace(setCellColor())
+$("body").append('<img src="/Users/calicoalex/sei/projects/tic-tac-toe/images/cat-ear-png-cat-ears-no-background-11562865357rq9pcfd4ug.png" height="50px" width="50px"')
 
-if (localStorage.getItem("preferenceSet") === "true") {
-    input = 1
-    if (localStorage.getItem("P1FirstPick") === "c1") { // I don't want to do this for every cell... there has to be a better way ... 
-        board[0][0] = input
-    }
-    $("#" + localStorage.getItem("P1FirstPick")).html('<p id="p1">X</p>')
-    xTurn = !xTurn;
-    $(".cellButton").hover(
-        function () {
-            $(this).addClass('hovered')
-            $(".hovered").html("O")
-            $(".hovered").css("background-color", `${p2Color}`)
-        },
-        function () {
-            $(".hovered").css("background-color", `white`)
-            $(".hovered").html("")
-            $(this).removeClass('hovered')
-        }
-    );
-}
+// if (localStorage.getItem("preferenceSet") === "true") {
+//     input = 1
+//     if (localStorage.getItem("P1FirstPick") === "c1") { // I don't want to do this for every cell... there has to be a better way ... 
+//         board[0][0] = input
+//     }
+//     $("#" + localStorage.getItem("P1FirstPick")).html('<p id="p1">X</p>')
+//     xTurn = !xTurn;
+//     $(".cellButton").hover(
+//         function () {
+//             $(this).addClass('hovered')
+//             $(".hovered").html("O")
+//             $(".hovered").css("background-color", `${p2Color}`)
+//         },
+//         function () {
+//             $(".hovered").css("background-color", `white`)
+//             $(".hovered").html("")
+//             $(this).removeClass('hovered')
+//         }
+//     );
+// }
 
 function setCellColor(){
     $("#p1").css("background", p1Color);
     $("#p2").css("background", p2Color);
-} setCellColor();
+} 
+// setCellColor()
 
 
 // $(".chosenCellp1").css("background", p1Color)
@@ -56,8 +58,7 @@ let whatHoverColor = function(currentPick, currentButton){
     // let currentButton = currentButton;
     if (xTurn) {
         $("#" + currentPick).html('<button id="p1" class="chosenCell nes-btn is-primary">X</button>')
-        $("#p1").css("background", p1Color)
-        setCellColor();
+        // setCellColor();
         $(".cellButton").hover(
             function () {
                 $(this).addClass('hovered')
@@ -72,8 +73,8 @@ let whatHoverColor = function(currentPick, currentButton){
         );
     } else {
         $("#" + currentPick).html('<button id="p2" class="chosenCell nes-btn is-primary">O</button>').css("backgroundColor", `${p2Color}`)
-        $("#p2").css("background", p2Color)
-        setCellColor();
+        // $("#p2").css("background", p2Color)
+        // setCellColor();
         $(".cellButton").hover(
             function () {
                 $(this).addClass('hovered')
@@ -88,22 +89,22 @@ let whatHoverColor = function(currentPick, currentButton){
         );
     }
 }
-$("#p1").css('background', p1Color)
-$("#p2").css('background', p2Color)
+// $("#p1").css('background', p1Color)
+// $("#p2").css('background', p2Color)
 
 function checkForColor(cell) { // defines what to give to a cell depending on current cell. 
     if (xTurn) {
         $("#" + cell).html('<button id="p1" class="chosenCell nes-btn is-primary">X</button>').css("backgroundColor", `${p1Color}`)
-        $("#p1").css("background", p1Color);
-        setCellColor();
+        // $("#p1").css("background", p1Color);
+        // setCellColor();
         $("#p2SelectedAvatar").css("border", `5px solid ${p2Color}`)
         $("#p1SelectedAvatar").css("border", `3px solid white`)
 
     }
     else {
         $("#" + cell).html('<button id="p2" class="chosenCell nes-btn is-primary">O</button>').css("backgroundColor", `${p2Color}`)
-        $("#p2").css("background", p2Color);
-        setCellColor();
+        // $("#p2").css("background", p2Color);
+        // setCellColor();
         $("#p1SelectedAvatar").css("border", `5px solid ${p1Color}`)
         $("#p2SelectedAvatar").css("border", `3px solid white`)
     }
@@ -543,7 +544,7 @@ $(".cellButton").on('click', function () {
     gameInProgress = !gameInProgress;
     checkForColor()
     turnsWent++
-    setCellColor();
+    // setCellColor();
     let currentPick = $(this).parents(".cell").attr("id")
     // console.log(this)
     if (!cellSelector) {

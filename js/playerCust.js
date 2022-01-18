@@ -26,6 +26,7 @@ $(".colorButton").on("click", function () {
         $("#p2SelectedAvatar").css("backgroundColor", p2Color)
         $('select[name="customisation2"]').css("backgroundColor", p2Color)
     }
+    // setCellColor()
     localStorage.setItem("p1Color", p1Color)
     localStorage.setItem("p2Color", p2Color)
 })
@@ -110,14 +111,23 @@ let p2Name = "";
 
 
 $(".backdrop").on("click", function(){
-    nesTheme();
-    window.location.reload();
+        console.log(nesTheme)
+        
+        // console.log('clicked')
+        
+        // window.location.reload();
+        nesTheme();
+        window.location.reload();
+        console.log('clicked')
+
+   
 })
 
 
 let nesTheme = function(){
     nesTheme = true;
     allowHoverColor = true;
+    
     $("#nes1").attr("href", "./node_modules/nes.css/css/nes.min.css");
     $("#nes2").attr("href", "https://unpkg.com/nes.css/css/nes-core.min.css");
     $("#nes3").attr("href","https://fonts.googleapis.com/css?family=Press+Start+2P");
@@ -130,7 +140,7 @@ let nesTheme = function(){
     $(".cellButton").css("padding", "20px");
     $(".cellButton").html("-");
     localStorage.setItem("nesTheme", nesTheme);
-    $("#clearBoard").hide();
+    // $("#clearBoard").hide();
     // $("#clearboard2").show();
 
     $("#garfenable").attr("src", "js/garf-returns.js");
@@ -176,6 +186,16 @@ $(".cattheme").on("click", function(){
     localStorage.setItem("newH1", newH1)
     localStorage.setItem("newCell", newCell)
     localStorage.setItem("newBoard", newBoard)
+    if (nesTheme = true) {
+        $("#nes1").attr("href", "");
+        $("#nes2").attr("href", "");
+        $("#nes3").attr("href", "");
+        nesTheme = false
+        localStorage.setItem("nesTheme", nesTheme);
+        $("*").css("fontFamily", "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif")
+        // window.location.reload()
+        return
+    }
 })
 
 // $(".bunnyTheme").on("click", function(){

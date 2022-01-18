@@ -1,10 +1,16 @@
 html,body{
-    background:cornflowerblue;
+    background:#bfbcf0;
     /* background-image:url("/Users/calicoalex/sei/projects/tic-tac-toe/pokemon-wallpapers/1.png"); */
     margin:0;
     height:100%;
 }
 
+/* #p1 {
+    background:seagreen
+}
+#p2{
+    background:crimson
+} */
 
 /* *{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -17,7 +23,7 @@ html,body{
     /* color:blue; */
     position:absolute;
     width:200px;
-    fill:orange;
+    fill:mediumorchid;
     visibility:hidden;
 }
 
@@ -44,7 +50,7 @@ select{
 
 
 h1{
-    color:orange;
+    color:mediumorchid;
     text-shadow:0 0 1px black;
     font-size:50px;
 }
@@ -165,7 +171,7 @@ input[type=file]{
     margin-left:-126.275px;
     position:fixed;
     left:50%;
-    border:2px solid black
+    /* border:2px solid black */
 
 
 }
@@ -191,9 +197,10 @@ input[type=file]{
 .cellButton{
     width: 80px;
     height: 80px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-size: 30px;
     text-align: center;
+    background:white;
 
 }
 /* #clearboard2{
