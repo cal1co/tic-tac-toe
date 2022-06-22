@@ -1,10 +1,9 @@
-# Simple Tic-Tac-Toe (WIP)
+# TIC-TAC-TOE: 1 WEEK CHALLENGE
 
 ## MY SITE: https://cal1co.github.io/tic-tac-toe/
 
 
 ## About this project:
-Completed as project 0 for General Assembly class SEI-50
 
 This project is a simple take on the classic "Tic-Tac-Toe" or "Naughts and Crosses" game everyone knows. Although many features were not implemented, and many bugs and design issues persist, the final product is presentable and functional. 
 
